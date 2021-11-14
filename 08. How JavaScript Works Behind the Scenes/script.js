@@ -66,3 +66,14 @@ const addExpr = function (a, b) {
 };
 
 var addArrow = (a, b) => a + b;
+
+// Example 1
+
+console.log(numProducts);
+if (!numProducts) deleteShoppingCart();
+
+var numProducts = 10;
+
+function deleteShoppingCart() {
+  console.log('All products deleted!');
+}
