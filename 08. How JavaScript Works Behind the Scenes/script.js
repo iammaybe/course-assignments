@@ -87,3 +87,13 @@ const z = 3;
 console.log(x === window.x);
 console.log(y === window.y);
 console.log(z === window.z);
+
+// Example 3
+
+console.log(this); // window
+
+const calcAge = function (birthYear) {
+  console.log(2037 - birthYear);
+  console.log(this); // undefined
+};
+calcAge(1991);
