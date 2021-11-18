@@ -111,11 +111,11 @@
 const jonas = {
   year: 1991,
   calcAge: function () {
-    console.log(this);
+    console.log(this); // jonas / matilda / undefined
     console.log(2037 - this.year);
   },
 };
-jonas.calcAge();
+jonas.calcAge(); // this = jonas
 
 // Example 6
 
@@ -124,4 +124,9 @@ const matilda = {
 };
 
 matilda.calcAge = jonas.calcAge;
-matilda.calcAge();
+matilda.calcAge(); // this = matilda
+
+// Example 7
+
+const f = jonas.calcAge;
+f(); // this = undefined
