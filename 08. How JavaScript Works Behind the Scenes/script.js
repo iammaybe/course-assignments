@@ -108,25 +108,52 @@
 
 // Example 5
 
-const jonas = {
-  year: 1991,
-  calcAge: function () {
-    console.log(this); // jonas / matilda / undefined
-    console.log(2037 - this.year);
-  },
-};
-jonas.calcAge(); // this = jonas
+// const jonas = {
+//   year: 1991,
+//   calcAge: function () {
+//     console.log(this); // jonas / matilda / undefined
+//     console.log(2037 - this.year);
+//   },
+// };
+// jonas.calcAge(); // this = jonas
 
 // Example 6
 
-const matilda = {
-  year: 2017,
-};
+// const matilda = {
+//   year: 2017,
+// };
 
-matilda.calcAge = jonas.calcAge;
-matilda.calcAge(); // this = matilda
+// matilda.calcAge = jonas.calcAge;
+// matilda.calcAge(); // this = matilda
 
 // Example 7
 
-const f = jonas.calcAge;
-f(); // this = undefined
+// const f = jonas.calcAge;
+// f(); // this = undefined
+
+// Example 8 (IT'S A GLOBAL SCOPE!)
+
+var firstName = 'Matilda'; // Window.firstName
+
+const jonas = {
+  firstName: 'Jonas',
+  year: 1991,
+  calcAge: function () {
+    console.log(this);
+    console.log(2037 - this.year);
+  },
+  // arrow function
+  greet: () => {
+    console.log(this); // Window
+    console.log(`Hey ${this.firstName}`); // Matilda (Window.firstName)
+  },
+  // function expression
+  greet2: function () {
+    console.log(this); // jonas
+    console.log(`Hey ${this.firstName}`); // Jonas (jonas.firstName)
+  },
+};
+
+// jonas.greet(); // Hey undefined (no firstName in Window object)
+jonas.greet(); // Hey Matilda
+jonas.greet2(); // Hey Jonas
