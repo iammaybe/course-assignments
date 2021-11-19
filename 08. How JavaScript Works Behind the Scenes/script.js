@@ -68,7 +68,6 @@
 // var addArrow = (a, b) => a + b;
 
 // Example 1
-
 // console.log(numProducts);
 // if (!numProducts) deleteShoppingCart();
 
@@ -79,7 +78,6 @@
 // }
 
 // Example 2
-
 // var x = 1;
 // let y = 2;
 // const z = 3;
@@ -89,7 +87,6 @@
 // console.log(z === window.z);
 
 // Example 3
-
 // console.log(this); // window
 
 // const calcAge = function (birthYear) {
@@ -99,7 +96,6 @@
 // calcAge(1991);
 
 // Example 4
-
 // const calcAgeArrow = birthYear => {
 //   console.log(2037 - birthYear);
 //   console.log(this); // window
@@ -107,7 +103,6 @@
 // calcAgeArrow(1980);
 
 // Example 5
-
 // const jonas = {
 //   year: 1991,
 //   calcAge: function () {
@@ -118,7 +113,6 @@
 // jonas.calcAge(); // this = jonas
 
 // Example 6
-
 // const matilda = {
 //   year: 2017,
 // };
@@ -127,12 +121,10 @@
 // matilda.calcAge(); // this = matilda
 
 // Example 7
-
 // const f = jonas.calcAge;
 // f(); // this = undefined
 
 // Example 8 (IT'S A GLOBAL SCOPE!)
-
 // var firstName = 'Matilda'; // Window.firstName
 
 // const jonas = {
@@ -159,7 +151,6 @@
 // jonas.greet2(); // Hey Jonas
 
 // Example 9
-
 var firstName = 'Matilda'; // Window.firstName
 
 const jonas = {
@@ -199,3 +190,19 @@ const jonas = {
 
 jonas.greet(); // Hey Matilda
 jonas.calcAge();
+
+// Example 10 (Arguments keyword)
+// function expression
+const addExpr = function (a, b) {
+  console.log(arguments); // Arguments(2) / Arguments(4)
+  return a + b;
+};
+addExpr(2, 4);
+addExpr(2, 5, 8, 12);
+
+// arrow function
+var addArrow = (a, b) => {
+  console.log(arguments); // arguments is not defined
+  return a + b;
+};
+addArrow(2, 5, 8);
