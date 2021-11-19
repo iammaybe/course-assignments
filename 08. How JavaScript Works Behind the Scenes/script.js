@@ -12,10 +12,10 @@
 
 //     if (birthYear >= 1981 && birthYear <= 1996) {
 //       var millenial = true;
-//       // Creating NEW variable with same name as outer scope's variable
+// Creating NEW variable with same name as outer scope's variable
 //       const firstName = 'Steven';
 
-//       // Reassigning outer scope's variable
+// Reassigning outer scope's variable
 //       output = 'NEW OUTPUT!';
 
 //       const str = `Oh, and you're a millenial, ${firstName}`;
@@ -51,7 +51,7 @@
 // let job = 'teacher';
 // const year = 1991;
 
-// // Functions
+// Functions
 // console.log(addDecl(2, 3));
 // // console.log(addExpr(2, 3));
 // console.log(addArrow);
@@ -142,12 +142,12 @@
 //     console.log(this);
 //     console.log(2037 - this.year);
 //   },
-//   // arrow function
+// arrow function
 //   greet: () => {
 //     console.log(this); // Window
 //     console.log(`Hey ${this.firstName}`); // Matilda (Window.firstName)
 //   },
-//   // function expression
+// function expression
 //   greet2: function () {
 //     console.log(this); // jonas
 //     console.log(`Hey ${this.firstName}`); // Jonas (jonas.firstName)
@@ -166,7 +166,7 @@ const jonas = {
   firstName: 'Jonas',
   year: 1991,
   calcAge: function () {
-    console.log(this);
+    // console.log(this);
     console.log(2037 - this.year);
 
     // const isMillenial = function () {
@@ -176,12 +176,19 @@ const jonas = {
     // isMillenial(); // undefined (regular function call)
 
     // Solution 1 (pre-ES6)
-    const self = this; // 'self' or 'that'
-    const isMillenial = function () {
-      console.log(self); // undefined
-      console.log(self.year >= 1981 && self.year <= 1996); // TypeError: Cannot read property 'year' of undefined
+    // const self = this; // this = jonas ('self' or 'that')
+    // const isMillenial = function () {
+    //   console.log(self); // jonas
+    //   console.log(self.year >= 1981 && self.year <= 1996); // true
+    // };
+
+    // Solution 2 (ES6)
+    const isMillenial = () => {
+      console.log(this); // jonas (parent scope)
+      console.log(this.year >= 1981 && this.year <= 1996); // true
     };
-    isMillenial(); // undefined (regular function call)
+
+    isMillenial();
   },
 
   greet: () => {
