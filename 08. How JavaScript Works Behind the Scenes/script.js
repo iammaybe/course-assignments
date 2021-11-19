@@ -25,9 +25,9 @@
 //         return a + b;
 //       }
 //     }
-//     // console.log(str);
+// console.log(str);
 //     console.log(millenial);
-//     // console.log(add(2, 3));
+// console.log(add(2, 3));
 //     console.log(output);
 //   }
 //   printAge();
@@ -53,9 +53,9 @@
 
 // Functions
 // console.log(addDecl(2, 3));
-// // console.log(addExpr(2, 3));
+// console.log(addExpr(2, 3));
 // console.log(addArrow);
-// // console.log(addArrow(2, 3));
+// console.log(addArrow(2, 3));
 
 // function addDecl(a, b) {
 //   return a + b;
@@ -146,63 +146,81 @@
 //   },
 // };
 
-// // jonas.greet(); // Hey undefined (no firstName in Window object)
+// jonas.greet(); // Hey undefined (no firstName in Window object)
 // jonas.greet(); // Hey Matilda
 // jonas.greet2(); // Hey Jonas
 
 // Example 9
-var firstName = 'Matilda'; // Window.firstName
+// var firstName = 'Matilda'; // Window.firstName
 
-const jonas = {
-  firstName: 'Jonas',
-  year: 1991,
-  calcAge: function () {
-    // console.log(this);
-    console.log(2037 - this.year);
+// const jonas = {
+//   firstName: 'Jonas',
+//   year: 1991,
+//   calcAge: function () {
+//     console.log(this);
+//     console.log(2037 - this.year);
 
-    // const isMillenial = function () {
-    //   console.log(this); // undefined
-    //   console.log(this.year >= 1981 && this.year <= 1996); // TypeError: Cannot read property 'year' of undefined
-    // };
-    // isMillenial(); // undefined (regular function call)
+//     const isMillenial = function () {
+//       console.log(this); // undefined
+//       console.log(this.year >= 1981 && this.year <= 1996); // TypeError: Cannot read property 'year' of undefined
+//     };
+//     isMillenial(); // undefined (regular function call)
 
-    // Solution 1 (pre-ES6)
-    // const self = this; // this = jonas ('self' or 'that')
-    // const isMillenial = function () {
-    //   console.log(self); // jonas
-    //   console.log(self.year >= 1981 && self.year <= 1996); // true
-    // };
+// Solution 1 (pre-ES6)
+//     const self = this; // this = jonas ('self' or 'that')
+//     const isMillenial = function () {
+//       console.log(self); // jonas
+//       console.log(self.year >= 1981 && self.year <= 1996); // true
+//     };
 
-    // Solution 2 (ES6)
-    const isMillenial = () => {
-      console.log(this); // jonas (parent scope)
-      console.log(this.year >= 1981 && this.year <= 1996); // true
-    };
+// Solution 2 (ES6)
+//     const isMillenial = () => {
+//       console.log(this); // jonas (parent scope)
+//       console.log(this.year >= 1981 && this.year <= 1996); // true
+//     };
 
-    isMillenial();
-  },
+//     isMillenial();
+//   },
 
-  greet: () => {
-    console.log(this); // Window
-    console.log(`Hey ${this.firstName}`); // Matilda (Window.firstName)
-  },
-};
+//   greet: () => {
+//     console.log(this); // Window
+//     console.log(`Hey ${this.firstName}`); // Matilda (Window.firstName)
+//   },
+// };
 
-jonas.greet(); // Hey Matilda
-jonas.calcAge();
+// jonas.greet(); // Hey Matilda
+// jonas.calcAge();
 
 // Example 10 (Arguments keyword)
 // function expression
-const addExpr = function (a, b) {
-  console.log(arguments); // Arguments(2) / Arguments(4)
-  return a + b;
-};
-addExpr(2, 4);
-addExpr(2, 5, 8, 12);
+// const addExpr = function (a, b) {
+//   console.log(arguments); // Arguments(2) / Arguments(4)
+//   return a + b;
+// };
+// addExpr(2, 4);
+// addExpr(2, 5, 8, 12);
 
 // arrow function
-var addArrow = (a, b) => {
-  console.log(arguments); // arguments is not defined
-  return a + b;
+// var addArrow = (a, b) => {
+//   console.log(arguments); // arguments is not defined
+//   return a + b;
+// };
+// addArrow(2, 5, 8);
+
+// Primitives vs. Objects (Primitive vs. Reference Types)
+let age = 30;
+let oldAge = age;
+age = 31;
+console.log(age); // 31
+console.log(oldAge); // 30
+
+const me = {
+  name: 'Jonas',
+  age: 30,
 };
-addArrow(2, 5, 8);
+
+const friend = me;
+friend.age = 27;
+
+console.log('Me', me); // 27
+console.log('Friend', friend); // 27
