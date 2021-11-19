@@ -133,6 +133,33 @@
 
 // Example 8 (IT'S A GLOBAL SCOPE!)
 
+// var firstName = 'Matilda'; // Window.firstName
+
+// const jonas = {
+//   firstName: 'Jonas',
+//   year: 1991,
+//   calcAge: function () {
+//     console.log(this);
+//     console.log(2037 - this.year);
+//   },
+//   // arrow function
+//   greet: () => {
+//     console.log(this); // Window
+//     console.log(`Hey ${this.firstName}`); // Matilda (Window.firstName)
+//   },
+//   // function expression
+//   greet2: function () {
+//     console.log(this); // jonas
+//     console.log(`Hey ${this.firstName}`); // Jonas (jonas.firstName)
+//   },
+// };
+
+// // jonas.greet(); // Hey undefined (no firstName in Window object)
+// jonas.greet(); // Hey Matilda
+// jonas.greet2(); // Hey Jonas
+
+// Example 9
+
 var firstName = 'Matilda'; // Window.firstName
 
 const jonas = {
@@ -141,19 +168,27 @@ const jonas = {
   calcAge: function () {
     console.log(this);
     console.log(2037 - this.year);
+
+    // const isMillenial = function () {
+    //   console.log(this); // undefined
+    //   console.log(this.year >= 1981 && this.year <= 1996); // TypeError: Cannot read property 'year' of undefined
+    // };
+    // isMillenial(); // undefined (regular function call)
+
+    // Solution 1 (pre-ES6)
+    const self = this; // 'self' or 'that'
+    const isMillenial = function () {
+      console.log(self); // undefined
+      console.log(self.year >= 1981 && self.year <= 1996); // TypeError: Cannot read property 'year' of undefined
+    };
+    isMillenial(); // undefined (regular function call)
   },
-  // arrow function
+
   greet: () => {
     console.log(this); // Window
     console.log(`Hey ${this.firstName}`); // Matilda (Window.firstName)
   },
-  // function expression
-  greet2: function () {
-    console.log(this); // jonas
-    console.log(`Hey ${this.firstName}`); // Jonas (jonas.firstName)
-  },
 };
 
-// jonas.greet(); // Hey undefined (no firstName in Window object)
 jonas.greet(); // Hey Matilda
-jonas.greet2(); // Hey Jonas
+jonas.calcAge();
