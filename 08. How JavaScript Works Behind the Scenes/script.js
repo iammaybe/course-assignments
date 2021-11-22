@@ -224,3 +224,11 @@ friend.age = 27;
 
 console.log('Me', me); // 27
 console.log('Friend', friend); // 27
+
+// Primitives vs. Objects in Practice
+// Primitive values
+let lastName = 'Williams';
+let oldLastName = lastName;
+lastName = 'Davis';
+
+console.log(lastName, oldLastName);
