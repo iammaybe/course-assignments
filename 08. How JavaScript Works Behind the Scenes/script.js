@@ -251,9 +251,16 @@ const jessica2 = {
   firstName: 'Jessica',
   lastName: 'Williams',
   age: 27,
+  family: ['Alice', 'Bob'],
 };
 
 const jessicaCopy = Object.assign({}, jessica2);
 jessicaCopy.lastName = 'Davis';
-console.log('Before marriage:', jessica2); // Williams
-console.log('After marriage:', jessicaCopy); // Davis
+console.log('Before marriage:', jessica2); // Williams / Array(2)
+console.log('After marriage:', jessicaCopy); // Davis / Array(2)
+
+jessicaCopy.family.push('Mary');
+jessicaCopy.family.push('John');
+
+console.log('Before marriage:', jessica2); // Williams / Array(4)
+console.log('After marriage:', jessicaCopy); // Davis / Array(4)
