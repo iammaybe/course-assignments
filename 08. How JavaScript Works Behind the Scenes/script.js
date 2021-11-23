@@ -242,5 +242,18 @@ const jessica = {
 
 const marriedJessica = jessica;
 marriedJessica.lastName = 'Davis';
-console.log('Before marriage:', jessica);
-console.log('After marriage:', marriedJessica);
+console.log('Before marriage:', jessica); // Davis
+console.log('After marriage:', marriedJessica); // Davis
+// marriedJessica = {}; // const = doesn't work (new object stored at different position in memory - address value changed)
+
+// Copying objects
+const jessica2 = {
+  firstName: 'Jessica',
+  lastName: 'Williams',
+  age: 27,
+};
+
+const jessicaCopy = Object.assign({}, jessica2);
+jessicaCopy.lastName = 'Davis';
+console.log('Before marriage:', jessica2); // Williams
+console.log('After marriage:', jessicaCopy); // Davis
