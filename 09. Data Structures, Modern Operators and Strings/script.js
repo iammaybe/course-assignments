@@ -40,5 +40,14 @@ console.log(arr); // [2, 3, 4]
 const [first, second] = restaurant.categories;
 console.log(first, second); // Italian Pizzeria
 
-const [first, , second] = restaurant.categories;
-console.log(first, second); // Italian Vegetarian
+const [first2, , second2] = restaurant.categories;
+console.log(first2, second2); // Italian Vegetarian
+
+let [main, , secondary] = restaurant.categories;
+console.log(main, secondary); // Italian Vegetarian
+
+// Without destructuring
+const temp = main;
+main = secondary;
+secondary = temp;
+console.log(main, secondary); // Vegetarian Italian
