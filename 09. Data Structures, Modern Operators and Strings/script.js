@@ -13,7 +13,7 @@ const restaurant = {
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
   order: function (starterIndex, mainIndex) {
-    return [this.starterMenu(starterIndex), this.mainMenu(mainIndex)];
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
   openingHours: {
@@ -62,5 +62,5 @@ console.log(main, secondary); // Vegetarian Italian
 
 // Receive 2 return values from a function
 // console.log(restaurant.order(2, 0)); // ["Garlic Bread", "Pizza"]
-const [starter, mainCourse] = restaurant.order(2, 0)); // Garlic Bread Pizza
+const [starter, mainCourse] = restaurant.order(2, 0); // Garlic Bread Pizza
 console.log(starter, mainCourse);
