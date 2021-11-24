@@ -36,3 +36,9 @@ const c = arr[2];
 const [x, y, z] = arr; // destructuring
 console.log(x, y, z); // 2 3 4
 console.log(arr); // [2, 3, 4]
+
+const [first, second] = restaurant.categories;
+console.log(first, second); // Italian Pizzeria
+
+const [first, , second] = restaurant.categories;
+console.log(first, second); // Italian Vegetarian
