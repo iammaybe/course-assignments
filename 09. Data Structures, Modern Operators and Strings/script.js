@@ -47,7 +47,11 @@ let [main, , secondary] = restaurant.categories;
 console.log(main, secondary); // Italian Vegetarian
 
 // Without destructuring
-const temp = main;
-main = secondary;
-secondary = temp;
+// const temp = main;
+// main = secondary;
+// secondary = temp;
+// console.log(main, secondary); // Vegetarian Italian
+
+// With destructuring
+[main, secondary] = [secondary, main];
 console.log(main, secondary); // Vegetarian Italian
