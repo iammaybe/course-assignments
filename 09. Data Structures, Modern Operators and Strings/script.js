@@ -59,3 +59,8 @@ console.log(main, secondary); // Italian Vegetarian
 // With destructuring
 [main, secondary] = [secondary, main];
 console.log(main, secondary); // Vegetarian Italian
+
+// Receive 2 return values from a function
+// console.log(restaurant.order(2, 0)); // ["Garlic Bread", "Pizza"]
+const [starter, mainCourse] = restaurant.order(2, 0)); // Garlic Bread Pizza
+console.log(starter, mainCourse);
