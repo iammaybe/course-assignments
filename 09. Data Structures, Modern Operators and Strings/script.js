@@ -45,8 +45,17 @@ const {
 } = restaurant;
 console.log(restaurantName, hours, tags);
 
+// Default values
 const { menu = [], starterMenu: starters = [] } = restaurant;
 console.log(menu, starters);
+
+// Mutating variables
+let a = 111;
+let b = 999;
+const obj = { a: 23, b: 7, c: 14 };
+
+({ a, b } = obj);
+console.log(a, b);
 
 /*
 ///////////////////////////////////////
@@ -71,24 +80,24 @@ let [main, , secondary] = restaurant.categories;
 console.log(main, secondary); // Italian Vegetarian
 
 // Without destructuring
-// const temp = main;
-// main = secondary;
-// secondary = temp;
-// console.log(main, secondary); // Vegetarian Italian
+const temp = main;
+main = secondary;
+secondary = temp;
+console.log(main, secondary); // Vegetarian Italian
 
 // With destructuring
 [main, secondary] = [secondary, main];
 console.log(main, secondary); // Vegetarian Italian
 
 // Receive 2 return values from a function
-// console.log(restaurant.order(2, 0)); // ["Garlic Bread", "Pizza"]
+console.log(restaurant.order(2, 0)); // ["Garlic Bread", "Pizza"]
 const [starter, mainCourse] = restaurant.order(2, 0); // Garlic Bread Pizza
 console.log(starter, mainCourse);
 
 // Nested destructuring
 const nested = [2, 4, [5, 6]];
-// const [i, , j] = nested;
-// console.log(i, j); // 2 [5, 6]
+const [i, , j] = nested;
+console.log(i, j); // 2 [5, 6]
 const [i, , [j, k]] = nested;
 console.log(i, j, k); // 2 5 6
 
