@@ -64,3 +64,10 @@ console.log(main, secondary); // Vegetarian Italian
 // console.log(restaurant.order(2, 0)); // ["Garlic Bread", "Pizza"]
 const [starter, mainCourse] = restaurant.order(2, 0); // Garlic Bread Pizza
 console.log(starter, mainCourse);
+
+// Nested destructuring
+const nested = [2, 4, [5, 6]];
+// const [i, , j] = nested;
+// console.log(i, j); // 2 [5, 6]
+const [i, , [j, k]] = nested;
+console.log(i, j, k); // 2 5 6
