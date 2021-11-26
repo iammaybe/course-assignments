@@ -12,10 +12,6 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-  order: function (starterIndex, mainIndex) {
-    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-  },
-
   openingHours: {
     thu: {
       open: 12,
@@ -30,7 +26,24 @@ const restaurant = {
       close: 24,
     },
   },
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+
+  orderDelivery: function ({ starterIndex, mainIndex, time, address }) {
+    console.log(
+      `Order received: ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+    );
+  },
 };
+
+// Calling a method with an object
+restaurant.orderDelivery({
+  time: '22:30',
+  address: 'Via del Sole, 21',
+  mainIndex: 2,
+  starterIndex: 2,
+});
 
 ///////////////////////////////////////
 // Destructuring Objects
