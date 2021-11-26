@@ -42,6 +42,18 @@ const restaurant = {
   },
 };
 
+// Spread operator
+const arr = [5, 6, 7];
+const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+console.log(badNewArr);
+
+const newArr = [1, 2, ...arr];
+console.log(newArr);
+
+/*
+///////////////////////////////////////
+// Destructuring Objects
+
 // Calling a method with an object
 restaurant.orderDelivery({
   time: '22:30',
@@ -55,8 +67,7 @@ restaurant.orderDelivery({
   starterIndex: 1,
 });
 
-///////////////////////////////////////
-// Destructuring Objects
+
 
 const { name, openingHours, categories } = restaurant;
 console.log(name, openingHours, categories);
