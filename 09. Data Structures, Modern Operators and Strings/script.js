@@ -50,6 +50,9 @@ console.log(badNewArr);
 const newArr = [1, 2, ...arr];
 console.log(newArr);
 
+console.log(...newArr);
+console.log(1, 2, 5, 6, 7);
+
 /*
 ///////////////////////////////////////
 // Destructuring Objects
