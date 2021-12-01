@@ -75,6 +75,13 @@ console.log(...str); // J o n a s
 console.log('J', 'o', 'n', 'a', 's'); // J o n a s
 // console.log(`${...str} Schmedtmann`); // not gonna work!
 
+const ingredients = [
+  prompt("Let's make pasta! Ingredients 1?"),
+  prompt('Ingredients 2?'),
+  prompt('Ingredients 3?'),
+];
+console.log(ingredients);
+
 /*
 ///////////////////////////////////////
 // Destructuring Objects
