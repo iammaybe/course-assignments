@@ -56,6 +56,9 @@ console.log(1, 2, 5, 6, 7);
 const newMenu = [...restaurant.mainMenu, 'Gnocchi'];
 console.log(newMenu);
 
+// Copy array
+const newMainMenu = [...restaurant.mainMenu];
+
 /*
 ///////////////////////////////////////
 // Destructuring Objects
