@@ -82,6 +82,9 @@ const ingredients = [
 ];
 console.log(ingredients);
 
+restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
+restaurant.orderPasta(...ingredients);
+
 /*
 ///////////////////////////////////////
 // Destructuring Objects
