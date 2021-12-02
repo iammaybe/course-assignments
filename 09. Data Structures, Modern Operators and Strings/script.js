@@ -89,6 +89,12 @@ restaurant.orderPasta(...ingredients);
 // Objects
 const newRestaurant = { foundedIn: 1998, ...restaurant, founder: 'Giuseppe' };
 console.log(newRestaurant);
+
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = 'Ristorante Roma';
+console.log(restaurantCopy.name); // Ristorante Roma
+console.log(restaurant.name); // Classico Italiano
+
 /*
 ///////////////////////////////////////
 // Destructuring Objects
