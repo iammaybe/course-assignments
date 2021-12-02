@@ -75,16 +75,20 @@ console.log(...str); // J o n a s
 console.log('J', 'o', 'n', 'a', 's'); // J o n a s
 // console.log(`${...str} Schmedtmann`); // not gonna work!
 
+// Real-world example
 const ingredients = [
-  prompt("Let's make pasta! Ingredients 1?"),
-  prompt('Ingredients 2?'),
-  prompt('Ingredients 3?'),
+  // prompt("Let's make pasta! Ingredients 1?"),
+  // prompt('Ingredients 2?'),
+  // prompt('Ingredients 3?'),
 ];
 console.log(ingredients);
 
 restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
 restaurant.orderPasta(...ingredients);
 
+// Objects
+const newRestaurant = { foundedIn: 1998, ...restaurant, founder: 'Giuseppe' };
+console.log(newRestaurant);
 /*
 ///////////////////////////////////////
 // Destructuring Objects
