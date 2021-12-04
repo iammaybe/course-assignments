@@ -46,6 +46,8 @@ const restaurant = {
   },
 };
 
+// 1) Destructuring
+
 // SPREAD, because on RIGHT side of =
 const arr = [1, 2, ...[3, 4]];
 console.log(arr); // [1, 2, 3, 4]
@@ -59,6 +61,10 @@ const [pizza, , risotto, ...otherFood] = [
   ...restaurant.starterMenu,
 ];
 console.log(pizza, risotto, otherFood); // Pizza Risotto, ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad']
+
+// Objects
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(weekdays); // {thu: {…}, fri: {…}}
 
 /*
 ///////////////////////////////////////
