@@ -46,7 +46,18 @@ const restaurant = {
   },
 };
 
-// Spread operator
+// SPREAD, because on RIGHT side of =
+const arr = [1, 2, ...[3, 4]];
+console.log(arr); // [1, 2, 3, 4]
+
+// REST, because on LEFT side of =
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others); // 1 2 [3, 4, 5]
+
+/*
+///////////////////////////////////////
+// The Spread Operator (...)
+
 const arr = [5, 6, 7];
 const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
 console.log(badNewArr);
@@ -94,6 +105,7 @@ const restaurantCopy = { ...restaurant };
 restaurantCopy.name = 'Ristorante Roma';
 console.log(restaurantCopy.name); // Ristorante Roma
 console.log(restaurant.name); // Classico Italiano
+*/
 
 /*
 ///////////////////////////////////////
