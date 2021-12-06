@@ -51,6 +51,17 @@ const restaurant = {
   },
 };
 
+// Use ANY data type, return ANY data type, short-circuting
+console.log(3 || 'Jonas'); // 3
+console.log('' || 'Jonas'); // 'Jonas'
+console.log(true || 0); // true
+console.log(undefined || null); // null
+
+console.log(undefined || 0 || '' || 'Hello' || 23 || null); // 'Hello'
+
+/*
+///////////////////////////////////////
+// Rest Pattern and Parameters
 // 1) Destructuring
 
 // SPREAD, because on RIGHT side of =
@@ -88,7 +99,7 @@ add(...x);
 restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach'); // mushrooms / ['onion', 'olives', 'spinach']
 restaurant.orderPizza('mushrooms'); // mushrooms / []
 
-/*
+
 ///////////////////////////////////////
 // The Spread Operator (...)
 
