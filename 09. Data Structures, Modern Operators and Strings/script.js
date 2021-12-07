@@ -61,8 +61,16 @@ console.log(undefined || null); // null
 console.log(undefined || 0 || '' || 'Hello' || 23 || null); // Hello (first truthy value)
 
 // Practical example
-// const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
-// console.log(guests1); // 10 (numGuests = undefined)
+// const guests = restaurant.numGuests ? restaurant.numGuests : 10;
+// console.log(guests); // 10 (numGuests = undefined)
+
+// restaurant.numGuests = 0;
+// const guests = restaurant.numGuests ? restaurant.numGuests : 10;
+// console.log(guests); // 10 (0 = falsy value)
+
+restaurant.numGuests = 0;
+const guests = restaurant.numGuests ?? 10;
+console.log(guests); // 0 (0 = non-nullish value)
 
 restaurant.numGuests = 23; // default value
 const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
