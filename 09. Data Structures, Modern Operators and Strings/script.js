@@ -60,6 +60,7 @@ console.log(undefined || null); // null
 
 console.log(undefined || 0 || '' || 'Hello' || 23 || null); // Hello (first truthy value)
 
+// Practical example
 // const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
 // console.log(guests1); // 10 (numGuests = undefined)
 
@@ -75,6 +76,13 @@ console.log(0 && 'Jonas'); // 0
 console.log(7 && 'Jonas'); // Jonas
 
 console.log('Hello' && 23 && null && 'Jonas'); // null (first falsy value)
+
+// Practical example
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
+}
+
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
 
 /*
 ///////////////////////////////////////
