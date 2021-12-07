@@ -51,13 +51,14 @@ const restaurant = {
   },
 };
 
+console.log('---- OR ----');
 // Use ANY data type, return ANY data type, short-circuting
 console.log(3 || 'Jonas'); // 3
-console.log('' || 'Jonas'); // 'Jonas'
+console.log('' || 'Jonas'); // Jonas
 console.log(true || 0); // true
 console.log(undefined || null); // null
 
-console.log(undefined || 0 || '' || 'Hello' || 23 || null); // 'Hello'
+console.log(undefined || 0 || '' || 'Hello' || 23 || null); // Hello (first truthy value)
 
 // const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
 // console.log(guests1); // 10 (numGuests = undefined)
@@ -68,6 +69,12 @@ console.log(guests1); // 23
 
 const guests2 = restaurant.numGuests || 10; // 23
 console.log(guests2);
+
+console.log('---- AND ----');
+console.log(0 && 'Jonas'); // 0
+console.log(7 && 'Jonas'); // Jonas
+
+console.log('Hello' && 23 && null && 'Jonas'); // null (first falsy value)
 
 /*
 ///////////////////////////////////////
