@@ -51,6 +51,11 @@ const restaurant = {
   },
 };
 
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+///////////////////////////////////////
+// Short Circuiting (&& and ||)
+
 console.log('---- OR ----');
 // Use ANY data type, return ANY data type, short-circuting
 console.log(3 || 'Jonas'); // 3
