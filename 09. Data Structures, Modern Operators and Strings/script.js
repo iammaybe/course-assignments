@@ -55,6 +55,11 @@ const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 
 for (const item of menu) console.log(item);
 
+for (const item of menu.entries()) {
+  console.log(item); // Array Iterator {}
+}
+
+/*
 ///////////////////////////////////////
 // Short Circuiting (&& and ||)
 
@@ -86,6 +91,7 @@ console.log(guests1); // 23
 const guests2 = restaurant.numGuests || 10; // 23
 console.log(guests2);
 
+
 console.log('---- AND ----');
 console.log(0 && 'Jonas'); // 0
 console.log(7 && 'Jonas'); // Jonas
@@ -99,7 +105,7 @@ if (restaurant.orderPizza) {
 
 restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
 
-/*
+
 ///////////////////////////////////////
 // Rest Pattern and Parameters
 // 1) Destructuring
