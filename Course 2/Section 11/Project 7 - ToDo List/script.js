@@ -1,4 +1,4 @@
-let todoInput, errorInfo, addBtn, ulList;
+let todoInput, errorInfo, addBtn, ulList, newTodo;
 
 const main = () => {
   prepareDOMElements();
@@ -12,6 +12,22 @@ const prepareDOMElements = () => {
   ulList = document.querySelector('.todolist ul');
 };
 
-const prepareDOMEvents = () => {};
+const prepareDOMEvents = () => {
+  addBtn.addEventListener('click', addNewTodo);
+};
+
+const addNewTodo = () => {
+  if (todoInput.value !== '') {
+    newTodo = document.createElement('li');
+    newTodo.textContent = todoInput.value;
+    ulList.append(newTodo);
+    todoInput.value = '';
+    errorInfo.textContent = '';
+    errorInfo.style.color = '';
+  } else {
+    errorInfo.textContent = 'Wpisz treść zadania!';
+    errorInfo.style.color = 'red';
+  }
+};
 
 document.addEventListener('DOMContentLoaded', main);
