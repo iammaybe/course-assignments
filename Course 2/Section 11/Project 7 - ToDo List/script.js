@@ -30,6 +30,7 @@ const prepareDOMElements = () => {
 const prepareDOMEvents = () => {
   addBtn.addEventListener('click', addNewTodo);
   ulList.addEventListener('click', checkClick);
+  popupAddBtn.addEventListener('click', changeTodoText);
   popupCloseBtn.addEventListener('click', closePopup);
 };
 
@@ -44,7 +45,7 @@ const addNewTodo = () => {
     errorInfo.style.color = '';
   } else {
     errorInfo.textContent = 'Wpisz treść zadania!';
-    errorInfo.style.color = 'red';
+    errorInfo.style.color = '#ff0000';
   }
 };
 
@@ -69,17 +70,31 @@ const checkClick = e => {
     e.target.closest('li').classList.toggle('completed');
     e.target.classList.toggle('completed');
   } else if (e.target.matches('.edit')) {
-    editTodo();
+    editTodo(e);
   } else if (e.target.matches('.delete')) {
   }
 };
 
-const editTodo = () => {
+const editTodo = e => {
+  todoToEdit = e.target.closest('li');
+  popupInput.value = todoToEdit.firstChild.textContent;
   popup.style.display = 'flex';
 };
 
 const closePopup = () => {
   popup.style.display = 'none';
+  popupInfo.textContent = '';
+  popupInfo.style.color = '';
+};
+
+const changeTodoText = () => {
+  if (popupInput.value !== '') {
+    todoToEdit.firstChild.textContent = popupInput.value;
+    closePopup();
+  } else {
+    popupInfo.textContent = 'Musisz podać jakąś treść!';
+    popupInfo.style.color = '#ff0000';
+  }
 };
 
 document.addEventListener('DOMContentLoaded', main);
