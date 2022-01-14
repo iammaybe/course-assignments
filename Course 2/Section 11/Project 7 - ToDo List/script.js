@@ -30,6 +30,7 @@ const prepareDOMElements = () => {
 const prepareDOMEvents = () => {
   addBtn.addEventListener('click', addNewTodo);
   ulList.addEventListener('click', checkClick);
+  popupCloseBtn.addEventListener('click', closePopup);
 };
 
 const addNewTodo = () => {
@@ -75,6 +76,10 @@ const checkClick = e => {
 
 const editTodo = () => {
   popup.style.display = 'flex';
+};
+
+const closePopup = () => {
+  popup.style.display = 'none';
 };
 
 document.addEventListener('DOMContentLoaded', main);
