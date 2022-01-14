@@ -1,4 +1,14 @@
-let todoInput, errorInfo, addBtn, ulList, newTodo;
+let todoInput,
+  errorInfo,
+  addBtn,
+  ulList,
+  newTodo,
+  popup,
+  popupInfo,
+  todoToEdit,
+  popupInput,
+  popupAddBtn,
+  popupCloseBtn;
 
 const main = () => {
   prepareDOMElements();
@@ -10,6 +20,11 @@ const prepareDOMElements = () => {
   errorInfo = document.querySelector('.error-info');
   addBtn = document.querySelector('.btn-add');
   ulList = document.querySelector('.todolist ul');
+  popup = document.querySelector('.popup');
+  popupInfo = document.querySelector('.popup-info');
+  popupInput = document.querySelector('.popup-input');
+  popupAddBtn = document.querySelector('.accept');
+  popupCloseBtn = document.querySelector('.cancel');
 };
 
 const prepareDOMEvents = () => {
@@ -53,8 +68,13 @@ const checkClick = e => {
     e.target.closest('li').classList.toggle('completed');
     e.target.classList.toggle('completed');
   } else if (e.target.matches('.edit')) {
+    editTodo();
   } else if (e.target.matches('.delete')) {
   }
+};
+
+const editTodo = () => {
+  popup.style.display = 'flex';
 };
 
 document.addEventListener('DOMContentLoaded', main);
