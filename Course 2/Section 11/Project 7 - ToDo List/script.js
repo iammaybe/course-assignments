@@ -30,8 +30,9 @@ const prepareDOMElements = () => {
 const prepareDOMEvents = () => {
   addBtn.addEventListener('click', addNewTodo);
   ulList.addEventListener('click', checkClick);
-  popupAddBtn.addEventListener('click', changeTodoText);
   popupCloseBtn.addEventListener('click', closePopup);
+  popupAddBtn.addEventListener('click', changeTodoText);
+  todoInput.addEventListener('keyup', enterKeyCheck);
 };
 
 const addNewTodo = () => {
@@ -101,10 +102,15 @@ const changeTodoText = () => {
 const deleteTodo = e => {
   e.target.closest('li').remove();
   const allTodos = ulList.querySelectorAll('li');
-
   if (allTodos.length === 0) {
     errorInfo.style = '';
     errorInfo.textContent = 'Brak zadań na liście.';
+  }
+};
+
+const enterKeyCheck = e => {
+  if (e.key === 'Enter') {
+    addNewTodo();
   }
 };
 
