@@ -48,6 +48,7 @@ const addNewTodo = () => {
     errorInfo.textContent = 'Wpisz treść zadania!';
     errorInfo.style.color = '#ff0000';
   }
+  closePopup();
 };
 
 const createToolsArea = () => {
@@ -106,6 +107,7 @@ const deleteTodo = e => {
     errorInfo.style = '';
     errorInfo.textContent = 'Brak zadań na liście.';
   }
+  closePopup();
 };
 
 const enterKeyCheck = e => {
