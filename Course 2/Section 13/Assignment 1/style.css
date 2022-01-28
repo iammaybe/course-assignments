@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+h1,
+p {
+  align-self: flex-start;
+  padding: 5px 10px;
+  text-transform: uppercase;
+}
+
+button {
+  padding: 20px 40px;
+  margin: 20px;
+  cursor: pointer;
+  background: none;
+  color: #fff;
+  font-size: 18px;
+  border: 3px solid #ddd;
+  border-radius: 8px;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #ddd;
+  color: #000;
+}
