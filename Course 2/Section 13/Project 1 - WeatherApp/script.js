@@ -23,6 +23,24 @@ const getWeather = () => {
     temperature.textContent = Math.floor(temp) + '°C';
     humidity.textContent = hum + '%';
     weather.textContent = status.main;
+
+    if (status.id >= 200 && status.id < 300) {
+      photo.setAttribute('src', './img/thunderstorm.png');
+    } else if (status.id >= 300 && status.id < 400) {
+      photo.setAttribute('src', './img/drizzle.png');
+    } else if (status.id >= 500 && status.id < 600) {
+      photo.setAttribute('src', './img/rain.png');
+    } else if (status.id >= 600 && status.id < 700) {
+      photo.setAttribute('src', './img/ice.png');
+    } else if (status.id >= 701 && status.id < 800) {
+      photo.setAttribute('src', './img/fog.png');
+    } else if (status.id === 800) {
+      photo.setAttribute('src', './img/sun.png');
+    } else if (status.id > 800 && status.id < 900) {
+      photo.setAttribute('src', './img/cloud.png');
+    } else {
+      photo.setAttribute('src', './img/unknown.png');
+    }
   });
 };
 
