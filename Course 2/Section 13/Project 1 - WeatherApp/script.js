@@ -12,7 +12,7 @@ const API_KEY = '&appid=a9b997446da512183d20a854efa5694b';
 const API_UNITS = '&units=metric';
 
 const getWeather = () => {
-  const city = input.value || 'London';
+  const city = input.value;
   const URL = API_LINK + city + API_KEY + API_UNITS;
 
   axios
@@ -49,5 +49,9 @@ const getWeather = () => {
     .catch(() => (warning.textContent = 'Please enter a valid city name!'));
 };
 
-getWeather();
+const enterCheck = e => {
+  if (e.key === 'Enter') getWeather();
+};
+
+input.addEventListener('keyup', enterCheck);
 button.addEventListener('click', getWeather);
