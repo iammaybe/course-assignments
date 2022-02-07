@@ -38,3 +38,44 @@ section {
 .four {
   background-color: tomato;
 }
+
+.first {
+  flex-direction: column;
+}
+
+.first .two,
+.first .four {
+  flex-grow: 1;
+}
+
+.second {
+  justify-content: space-around;
+  align-items: center;
+}
+
+.third .one {
+  order: 1;
+  flex-grow: 1;
+}
+
+.third .three {
+  order: -2;
+}
+
+.third .four {
+  order: -1;
+  flex-grow: 3;
+}
+
+.fourth {
+  flex-direction: row-reverse;
+  align-items: flex-end;
+}
+
+.fourth .two {
+  align-self: flex-start;
+}
+
+.fourth .three {
+  align-self: center;
+}
