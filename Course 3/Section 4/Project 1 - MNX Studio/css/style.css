@@ -79,6 +79,11 @@ body {
   font-size: 1.8rem;
 }
 
+.accordion-button:not(.collapsed) {
+  color: rgb(233, 106, 22);
+  background-color: rgb(248, 248, 248);
+}
+
 /* team */
 
 .team {
