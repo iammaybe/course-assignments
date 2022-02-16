@@ -13,3 +13,18 @@ body {
   font-family: 'Raleway', sans-serif;
   font-size: 1.6rem;
 }
+
+/* nav */
+nav {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.navbar-brand {
+  font-size: 2.4rem;
+  font-weight: bold;
+  text-transform: none;
+}
+.navbar-toggler {
+  font-size: 3rem;
+}
