@@ -62,22 +62,7 @@ header {
   background-image: url('../img/main-carousel-3.jpg');
 }
 
-@media (min-width: 1400px) {
-  .carousel-item {
-    height: 400px;
-  }
-  .carousel-img-one {
-    background-image: url('../img/main-carousel-1-hq.jpg');
-  }
-  .carousel-img-two {
-    background-image: url('../img/main-carousel-2-hq.jpg');
-  }
-  .carousel-img-three {
-    background-image: url('../img/main-carousel-3-hq.jpg');
-  }
-}
-
-/* home */
+/* home-boxes */
 .home-boxes {
   padding: 5em 0;
 }
@@ -88,4 +73,32 @@ header {
 
 .home-box h3 {
   font-size: 2.6rem;
+}
+
+/* home-passion */
+.home-passion {
+  position: relative;
+  height: 350px;
+  background-image: url('../img/home-passion.jpg');
+  background-position: center;
+  background-size: cover;
+  z-index: 0;
+}
+
+@media (min-width: 1400px) {
+  .carousel-item {
+    height: 600px;
+  }
+  .carousel-img-one {
+    background-image: url('../img/main-carousel-1-hq.jpg');
+  }
+  .carousel-img-two {
+    background-image: url('../img/main-carousel-2-hq.jpg');
+  }
+  .carousel-img-three {
+    background-image: url('../img/main-carousel-3-hq.jpg');
+  }
+  .home-passion {
+    background-image: url('../img/home-passion-hq.jpg');
+  }
 }
