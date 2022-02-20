@@ -24,6 +24,22 @@ body {
   z-index: -1;
 }
 
+.top-hero {
+  position: relative;
+  height: 200px;
+  background-size: cover;
+  z-index: 0;
+}
+
+.top-hero-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 3.6rem;
+  text-transform: uppercase;
+}
+
 /* nav */
 nav {
   font-size: 2rem;
@@ -89,6 +105,12 @@ header {
 .home-brand h3 {
   font-size: 3rem;
   font-weight: bold;
+}
+
+/* aboutus */
+.aboutus-hero {
+  background-image: url('../img/aboutus/aboutus-hero.jpg');
+  background-position: bottom;
 }
 
 /* media */
