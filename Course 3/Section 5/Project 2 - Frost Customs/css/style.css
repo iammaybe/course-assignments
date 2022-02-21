@@ -143,6 +143,16 @@ header {
   object-fit: cover;
 }
 
+/* aboutus-bottom */
+.aboutus-bottom i {
+  font-size: 3rem;
+}
+
+.aboutus-bottom h3 {
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
 /* media */
 @media (min-width: 992px) {
   .aboutus-info .container {
