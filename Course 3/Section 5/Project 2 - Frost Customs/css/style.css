@@ -153,10 +153,40 @@ header {
   font-weight: bold;
 }
 
-/* services */
+/* services-hero */
 .services-hero {
   background-image: url('../img/services/services-hero.jpg');
   background-position: 0 75%;
+}
+
+/* services-pricing */
+.services-hero-box {
+  position: relative;
+  height: 300px;
+  background-size: cover;
+  z-index: 0;
+}
+
+.services-hero-box p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.services-hero-box.box-one {
+  background-image: url('../img/services/engine.jpg');
+}
+.services-hero-box.box-two {
+  background-image: url('../img/services/visual.jpg');
+}
+.services-hero-box.box-three {
+  background-image: url('../img/services/car-audio.jpg');
+}
+.services-hero-box.box-four {
+  background-image: url('../img/services/allinone.jpg');
 }
 
 /* media */
