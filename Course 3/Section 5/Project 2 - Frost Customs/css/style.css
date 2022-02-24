@@ -195,6 +195,17 @@ header {
   background-position: center;
 }
 
+/* projects */
+.projects img {
+  height: 240px;
+  object-fit: cover;
+}
+
+.projects .btn {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+
 /* media */
 @media (min-width: 992px) {
   .aboutus-info .container {
