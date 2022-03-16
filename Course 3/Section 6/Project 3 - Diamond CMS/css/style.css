@@ -6,10 +6,43 @@
 
 html {
   font-size: 62.5%;
-  scroll-behavior: smooth;
 }
 
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  min-width: 1600px;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.6rem;
+  background-color: #181d23;
+  overflow: scroll;
+}
+
+.active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.panel {
+  width: 1600px;
+  height: 1000px;
+  border: 1px solid #4b5769;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.panel-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #4b5769;
+}
+
+.panel-right {
+  background-image: linear-gradient(
+    180deg,
+    rgba(55, 64, 76, 1) 0%,
+    rgba(21, 26, 32, 1) 100%
+  );
 }
