@@ -12,7 +12,7 @@ var options = {
   chart: {
     height: 350,
     type: 'area',
-    foreColor: '#373d3f',
+    foreColor: '#fff',
   },
   dataLabels: {
     enabled: false,
