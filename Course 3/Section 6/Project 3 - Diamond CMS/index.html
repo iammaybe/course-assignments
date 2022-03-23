@@ -88,6 +88,92 @@
 
                 <div id="chart" class="py-5 text-dark"></div>
               </section>
+              <section class="main-table p-5">
+                <div class="d-flex justify-content-between">
+                  <h3 class="mb-3">Ostatnie posty:</h3>
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-outline-light dropdown-toggle"
+                      type="button"
+                      id="dropdownMenuButton1"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Sortuj
+                    </button>
+                    <ul
+                      class="dropdown-menu"
+                      aria-labelledby="dropdownMenuButton1"
+                    >
+                      <li><a class="dropdown-item" href="#">Według dat</a></li>
+                      <li>
+                        <a class="dropdown-item" href="#">Według autora</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <table class="table table-transparent text-light">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Temat</th>
+                      <th scope="col">Użytkownik</th>
+                      <th scope="col">Data</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>1</th>
+                      <td>Lorem, ipsum dolor.</td>
+                      <td>Otto</td>
+                      <td>20/20/2020</td>
+                    </tr>
+                    <tr>
+                      <th>2</th>
+                      <td>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit.
+                      </td>
+                      <td>Thornton</td>
+                      <td>20/20/2020</td>
+                    </tr>
+                    <tr>
+                      <th>3</th>
+                      <td>Lorem ipsum dolor sit amet.</td>
+                      <td>Larry the Bird</td>
+                      <td>20/20/2020</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <nav
+                  aria-label="Page navigation example"
+                  class="d-flex justify-content-center"
+                >
+                  <ul class="pagination">
+                    <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                      </a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" href="#">1</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" href="#">2</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" href="#">3</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </section>
             </div>
             <div class="col-3 p-4 text-light text-center aside"></div>
           </div>
