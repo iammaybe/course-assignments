@@ -217,6 +217,10 @@ aside h3 {
   font-size: 3rem;
 }
 
+.monthly-stats option {
+  background-color: #181d23;
+}
+
 .monthly-stats .form-select,
 .monthly-stats option {
   font-size: 1.6rem;
