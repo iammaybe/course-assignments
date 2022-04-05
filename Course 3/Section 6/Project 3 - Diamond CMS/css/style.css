@@ -322,3 +322,16 @@ aside h3 {
 .user-search .btn {
   font-size: 2rem;
 }
+
+/* users-modal */
+.users-modal h3.card-title {
+  font-size: 2.6rem;
+}
+
+.users-modal label,
+.users-modal .newsletter,
+.users-modal select,
+.users-modal input,
+.users-modal .btn {
+  font-size: 1.6rem;
+}
