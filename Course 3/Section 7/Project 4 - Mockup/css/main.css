@@ -27,6 +27,17 @@ body {
   z-index: -1;
 }
 
+.section-title {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-decoration-color: #333;
+}
+
+/* --- */
+
 .nav-mobile,
 .navbar-toggler,
 .nav-desktop {
@@ -42,9 +53,25 @@ body {
   z-index: 0;
 }
 
+/* --- */
+
+.aboutme-img {
+  max-height: 400px;
+}
+
+.aboutme-footer p {
+  font-size: 1.2rem;
+}
+
+.aboutme-footer .btn {
+  font-size: 1.6rem;
+}
+
+/* --- */
+
 @media (min-width: 992px) {
   .header {
-    height: 60vh;
+    height: 65vh;
   }
 }
 
