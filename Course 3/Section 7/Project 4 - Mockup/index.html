@@ -85,13 +85,13 @@
         <div class="container py-5">
           <div class="aboutme-main">
             <h3 class="section-title mb-5">o mnie</h3>
-            <div class="aboutme-main-box row m-0 py-4">
+            <div class="aboutme-main-box row m-0 py-5">
               <div
                 class="aboutme-left col-12 col-lg-4 d-flex flex-column flex-lg-row justify-content-center align-items-center pe-lg-5 mb-5 mb-lg-0"
               >
                 <img
                   class="aboutme-img img-fluid border border-5"
-                  src="img/aboutme/me.jpg"
+                  src="img/aboutme/aboutme-main.jpg"
                   alt="Mężczyzna z aparatem
               fotograficznym."
                 />
@@ -100,7 +100,7 @@
               <div
                 class="aboutme-right col-12 col-lg-8 d-flex flex-column justify-content-between"
               >
-                <div class="aboutme-main mb-3 mb-lg-0">
+                <div class="aboutme-text mb-3 mb-lg-0">
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
                     auctor libero at sem maximus, a tempus sapien sollicitudin.
@@ -127,6 +127,96 @@
                   >
                 </div>
               </div>
+            </div>
+          </div>
+
+          <div class="aboutme-carousel py-5">
+            <div
+              id="carouselExampleCaptions"
+              class="carousel slide"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-indicators">
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleCaptions"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="Slide 1"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleCaptions"
+                  data-bs-slide-to="1"
+                  aria-label="Slide 2"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleCaptions"
+                  data-bs-slide-to="2"
+                  aria-label="Slide 3"
+                ></button>
+              </div>
+              <div class="carousel-inner text-light text-center">
+                <div class="carousel-item carousel-img-one active">
+                  <div
+                    class="carousel-caption h-100 p-5 d-flex flex-column justify-content-end align-items-center"
+                  >
+                    <p class="display-3">Wysokiej jakości sprzęt</p>
+                    <p class="d-none d-sm-block">
+                      Zdjęcia wykonuję sprzętem najwyższej jakości.
+                    </p>
+                  </div>
+                  <div class="hero-shadow"></div>
+                </div>
+                <div class="carousel-item carousel-img-two">
+                  <div
+                    class="carousel-caption h-100 p-5 d-flex flex-column justify-content-end align-items-center"
+                  >
+                    <p class="display-3">Fotografia turystyczna</p>
+                    <p class="d-none d-sm-block">
+                      Pasję do fotografii łączę z pasją do podróżowania.
+                    </p>
+                  </div>
+                  <div class="hero-shadow"></div>
+                </div>
+                <div class="carousel-item carousel-img-three">
+                  <div
+                    class="carousel-caption h-100 p-5 d-flex flex-column justify-content-end align-items-center"
+                  >
+                    <p class="display-3">Fotografia krajobrazu</p>
+                    <p class="d-none d-sm-block">
+                      Wykonuję zdjęcia w wielu miejscach na świecie.
+                    </p>
+                  </div>
+                  <div class="hero-shadow"></div>
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
           </div>
         </div>

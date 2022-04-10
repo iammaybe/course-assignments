@@ -67,6 +67,24 @@ body {
   font-size: 1.6rem;
 }
 
+.carousel-item {
+  position: relative;
+  height: 350px;
+  background-position: center;
+  background-size: cover;
+  z-index: 0;
+}
+
+.carousel-img-one {
+  background-image: url('../img/aboutme/aboutme-carousel-1.jpg');
+}
+.carousel-img-two {
+  background-image: url('../img/aboutme/aboutme-carousel-2.jpg');
+}
+.carousel-img-three {
+  background-image: url('../img/aboutme/aboutme-carousel-3.jpg');
+}
+
 /* --- */
 
 @media (min-width: 992px) {
@@ -78,5 +96,19 @@ body {
 @media (min-width: 1400px) {
   .header {
     background-image: url('../img/header-hq.jpg');
+  }
+
+  .carousel-item {
+    height: 450px;
+  }
+
+  .carousel-img-one {
+    background-image: url('../img/aboutme/aboutme-carousel-1-hq.jpg');
+  }
+  .carousel-img-two {
+    background-image: url('../img/aboutme/aboutme-carousel-2-hq.jpg');
+  }
+  .carousel-img-three {
+    background-image: url('../img/aboutme/aboutme-carousel-3-hq.jpg');
   }
 }
