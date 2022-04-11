@@ -28,12 +28,13 @@ body {
 }
 
 .section-title {
-  font-size: 3rem;
+  font-size: 3.2rem;
   font-weight: bold;
-  text-align: center;
   text-transform: uppercase;
-  text-decoration: underline;
-  text-decoration-color: #333;
+}
+
+.section-title-underline {
+  border-bottom: 4px solid #333;
 }
 
 /* --- */
@@ -67,6 +68,10 @@ body {
   font-size: 1.6rem;
 }
 
+.aboutme-carousel {
+  padding: 0 7.5px;
+}
+
 .carousel-item {
   position: relative;
   height: 350px;
@@ -90,6 +95,10 @@ body {
 @media (min-width: 992px) {
   .header {
     height: 65vh;
+  }
+
+  .section-title {
+    padding: 0 7.5px;
   }
 }
 
