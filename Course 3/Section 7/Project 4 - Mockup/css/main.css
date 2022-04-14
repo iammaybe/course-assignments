@@ -14,7 +14,6 @@ html {
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 1.6rem;
-  height: 200vh;
 }
 
 .hero-shadow {
@@ -47,8 +46,15 @@ body {
   bottom: -3px;
   width: 50%;
   height: 4px;
-  background-color: #333;
   transform: translateX(-50%);
+}
+
+.section-title-light::after {
+  background-color: #6c757d;
+}
+
+.section-title-dark::after {
+  background-color: #ddd;
 }
 
 /* --- */
@@ -70,8 +76,12 @@ body {
 
 /* --- */
 
+.aboutme {
+  background-color: #ddd;
+}
+
 .aboutme-img {
-  max-height: 400px;
+  max-height: 350px;
 }
 
 .aboutme-footer p {
