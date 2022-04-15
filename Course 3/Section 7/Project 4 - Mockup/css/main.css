@@ -81,7 +81,7 @@ body {
 }
 
 .aboutme-img {
-  max-height: 350px;
+  max-height: 260px;
 }
 
 .aboutme-footer p {
@@ -116,6 +116,64 @@ body {
 
 /* --- */
 
+.prices-cards {
+  padding: 0 7.5px;
+}
+
+.prices-cards .card {
+  max-width: 350px;
+  margin: 0 auto;
+  border: 1px solid #212529;
+  transition: transform 0.3s;
+}
+
+.prices-cards .card-body {
+  padding: 5rem;
+}
+
+.prices-cards .card-title {
+  font-size: 2.6rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.prices-cards .card-icon {
+  font-size: 4rem;
+}
+
+.prices-cards .card-button {
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 1px solid #212529;
+}
+
+.prices-cards .card-two,
+.prices-cards .card-two .card-button {
+  border-color: #fff;
+}
+
+/* --- */
+
+@media (min-width: 768px) {
+  .prices-cards .card-button {
+    font-size: 1.4rem;
+  }
+
+  .prices-cards .card-one,
+  .prices-cards .card-three {
+    transform: scale(85%);
+  }
+
+  .prices-cards .card-two {
+    transform: scale(90%);
+  }
+
+  .prices-cards .card:hover {
+    transform: scale(100%);
+  }
+}
+
 @media (min-width: 992px) {
   .header {
     height: 65vh;
@@ -128,6 +186,14 @@ body {
   .section-title::after {
     left: 0;
     transform: translateX(0);
+  }
+
+  .prices-cards .card-body {
+    padding: 6rem 6rem;
+  }
+
+  .prices-cards .card-button {
+    font-size: 1.8rem;
   }
 }
 
