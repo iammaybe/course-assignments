@@ -128,7 +128,7 @@ body {
 }
 
 .prices-cards .card-body {
-  padding: 5rem;
+  padding: 4rem;
 }
 
 .prices-cards .card-title {
@@ -157,7 +157,7 @@ body {
 
 @media (min-width: 768px) {
   .prices-cards .card-button {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 
   .prices-cards .card-one,
@@ -189,7 +189,7 @@ body {
   }
 
   .prices-cards .card-body {
-    padding: 6rem 6rem;
+    padding: 6rem;
   }
 
   .prices-cards .card-button {
