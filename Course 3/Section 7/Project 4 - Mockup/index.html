@@ -81,51 +81,51 @@
     </nav>
 
     <main>
-      <section id="aboutme" class="aboutme text-dark py-5">
+      <section id="aboutme" class="aboutme section-light text-dark py-5">
         <div class="container py-4 py-lg-5">
-          <div class="aboutme-main">
-            <h3 class="section-title section-title-light mb-4">o mnie</h3>
-            <div class="aboutme-main-box row m-0 py-5">
-              <div
-                class="aboutme-left col-12 col-lg-4 d-flex flex-column flex-lg-row justify-content-center align-items-center pe-lg-5 mb-5 mb-lg-0"
-              >
-                <img
-                  class="aboutme-img img-fluid border border-dark border-4"
-                  src="img/aboutme/aboutme-main.jpg"
-                  alt="Mężczyzna z aparatem
+          <h3 class="section-title section-title-light mb-4">o mnie</h3>
+          <div class="aboutme-main row m-0 py-5">
+            <div
+              class="aboutme-left col-12 col-lg-4 d-flex flex-column flex-lg-row justify-content-center align-items-center pe-lg-5 mb-5 mb-lg-0"
+            >
+              <img
+                class="aboutme-img img-fluid border border-dark border-4"
+                src="img/aboutme/aboutme-main.jpg"
+                alt="Mężczyzna z aparatem
               fotograficznym."
-                />
+              />
+            </div>
+
+            <div
+              class="aboutme-right col-12 col-lg-8 d-flex flex-column justify-content-between ps-lg-5"
+            >
+              <div class="aboutme-text mb-3 mb-lg-0">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+                  auctor libero at sem maximus, a tempus sapien sollicitudin.
+                  Aenean at neque ligula. Morbi suscipit enim felis, sit amet
+                  facilisis nunc blandit et. Vivamus sed tincidunt sapien, et
+                  cursus justo. Lorem ipsum dolor sit amet, consectetur
+                  adipisicing elit. Iusto, similique!
+                </p>
               </div>
 
               <div
-                class="aboutme-right col-12 col-lg-8 d-flex flex-column justify-content-between ps-lg-5"
+                class="aboutme-footer d-flex flex-column flex-lg-row justify-content-between"
               >
-                <div class="aboutme-text mb-3 mb-lg-0">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-                    auctor libero at sem maximus, a tempus sapien sollicitudin.
-                    Aenean at neque ligula. Morbi suscipit enim felis, sit amet
-                    facilisis nunc blandit et. Vivamus sed tincidunt sapien, et
-                    cursus justo. Lorem ipsum dolor sit amet, consectetur
-                    adipisicing elit. Iusto, similique!
+                <div class="aboutme-footer-text mb-4 mb-lg-0">
+                  <p class="lead m-0">
+                    Curabitur tincidunt vel quam in placerat.
+                  </p>
+                  <p class="lead m-0">
+                    Integer vel viverra orci, et pellentesque sapien.
                   </p>
                 </div>
-
-                <div class="aboutme-footer d-flex flex-column flex-lg-row">
-                  <div class="aboutme-footer-text mb-4 mb-lg-0">
-                    <p class="lead m-0">
-                      Curabitur tincidunt vel quam in placerat.
-                    </p>
-                    <p class="lead m-0">
-                      Integer vel viverra orci, et pellentesque sapien.
-                    </p>
-                  </div>
-                  <a
-                    href="#contact"
-                    class="btn btn-outline-dark px-5 py-3 m-auto"
-                    >Kontakt</a
-                  >
-                </div>
+                <a
+                  href="#contact"
+                  class="btn btn-outline-dark px-5 py-3 m-auto m-lg-0"
+                  >Kontakt</a
+                >
               </div>
             </div>
           </div>
@@ -273,6 +273,71 @@
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact section-light text-dark py-5">
+        <div class="container py-4 py-lg-5">
+          <h3 class="section-title section-title-light mb-4">kontakt</h3>
+          <div class="contact-main row m-0 py-5 gx-5">
+            <div
+              class="contact-left col-12 col-lg-3 d-flex flex-column justify-content-center align-items-center p-4 p-lg-5"
+            >
+              <p class="contact-left-title mb-4">Adres</p>
+
+              <div class="contact-left-info text-start">
+                <p class="m-0">
+                  <i class="fa-solid fa-house"></i> ul. Agrestowa 15
+                </p>
+                <p><i class="fa-solid fa-city"></i> 30-210 Kraków</p>
+                <p class="m-0">
+                  <i class="fa-solid fa-phone"></i> +48 751 525 729
+                </p>
+                <p class="m-0">
+                  <i class="fa-solid fa-envelope"></i> mail@stanphoto.pl
+                </p>
+              </div>
+            </div>
+            <div class="contact-right col-12 col-lg-9 p-4 p-lg-5">
+              <form class="mt-3">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group mb-4">
+                      <label>Imię i nazwisko:</label>
+                      <input type="text" class="form-control" />
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group mb-4">
+                      <label>Adres mailowy:</label>
+                      <input type="email" class="form-control" />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group mb-4">
+                    <label>Temat:</label>
+                    <select class="form-select">
+                      <option selected>- wybierz temat -</option>
+                      <option>Realizacja usługi</option>
+                      <option>Problem z płatnością</option>
+                      <option>Inny</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group mb-4">
+                    <label>Twoja wiadomość:</label>
+                    <textarea
+                      rows="6"
+                      class="form-control"
+                      placeholder="Treść wiadomości..."
+                    ></textarea>
+                  </div>
+                </div>
+              </form>
             </div>
           </div>
         </div>
