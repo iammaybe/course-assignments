@@ -30,6 +30,10 @@ body {
   background-color: #ddd;
 }
 
+.section-padding {
+  padding: 0 7.5px;
+}
+
 .header p {
   padding: 0 15px;
 }
@@ -48,7 +52,7 @@ body {
   position: absolute;
   left: 50%;
   bottom: -3px;
-  width: 50%;
+  width: 60px;
   height: 4px;
   transform: translateX(-50%);
 }
@@ -92,10 +96,6 @@ body {
   font-size: 1.6rem;
 }
 
-.aboutme-carousel {
-  padding: 0 7.5px;
-}
-
 .carousel-item {
   position: relative;
   height: 350px;
@@ -115,10 +115,6 @@ body {
 }
 
 /* --- */
-
-.prices-cards {
-  padding: 0 7.5px;
-}
 
 .prices-cards .card {
   max-width: 350px;
@@ -156,16 +152,12 @@ body {
 /* --- */
 
 .contact-left {
-  margin-bottom: 1rem;
+  margin-bottom: 0.25em;
 }
 
 .contact-left,
 .contact-right {
   border: 1px solid #000;
-}
-
-.contact-main {
-  padding: 0 7.5px;
 }
 
 .contact-left-title {
@@ -201,8 +193,17 @@ body {
     transform: scale(100%);
   }
 
+  .contact-main {
+    justify-content: space-between;
+  }
+
   .contact-left {
+    width: 29.5%;
     margin-bottom: 0;
+  }
+
+  .contact-right {
+    width: 70%;
   }
 }
 
@@ -216,7 +217,7 @@ body {
   }
 
   .section-title::after {
-    left: 0;
+    left: 2px;
     transform: translateX(0);
   }
 
