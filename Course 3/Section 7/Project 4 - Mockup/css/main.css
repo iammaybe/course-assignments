@@ -51,7 +51,7 @@ body {
   content: '';
   position: absolute;
   left: 50%;
-  bottom: -3px;
+  bottom: -6px;
   width: 60px;
   height: 4px;
   transform: translateX(-50%);
@@ -83,10 +83,6 @@ body {
 }
 
 /* --- */
-
-.aboutme-img {
-  max-height: 260px;
-}
 
 .aboutme-footer p {
   font-size: 1.2rem;
@@ -173,9 +169,18 @@ body {
   border: 1px solid #212529;
 }
 
+.contact .btn {
+  font-size: 1.6rem;
+  align-self: center;
+}
+
 /* --- */
 
 @media (min-width: 768px) {
+  .carousel-item {
+    height: 460px;
+  }
+
   .prices-cards .card-button {
     font-size: 1.2rem;
   }
