@@ -23,8 +23,9 @@
     ></script>
     <link rel="stylesheet" href="css/main.css" />
   </head>
-  <body>
+  <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="57">
     <nav
+      id="navbar"
       class="nav-mobile navbar navbar-dark bg-dark py-3 sticky-top d-lg-none"
     >
       <div class="container">
@@ -41,7 +42,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav pt-4">
-            <a class="nav-link active ms-auto" aria-current="page" href="#"
+            <a class="nav-link active ms-auto" aria-current="page" href="#home"
               >Home</a
             >
             <a class="nav-link ms-auto" href="#aboutme">O mnie</a>
@@ -52,6 +53,7 @@
       </div>
     </nav>
     <header
+      id="home"
       class="header d-flex flex-column justify-content-center align-items-center text-light text-center"
     >
       <h1 class="display-1 fw-bold">
@@ -61,12 +63,13 @@
       <div class="hero-shadow"></div>
     </header>
     <nav
+      id="navbar"
       class="nav-desktop navbar navbar-expand-lg navbar-dark bg-dark py-3 sticky-top d-none d-lg-block"
     >
       <div class="container">
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav m-auto">
-            <a class="nav-link active px-4" aria-current="page" href="#"
+            <a class="nav-link active px-5" aria-current="page" href="#home"
               >Home</a
             >
             <a class="nav-link px-5" href="#aboutme">O mnie</a>
@@ -225,7 +228,7 @@
           <h3
             class="section-title section-title-dark mb-4 text-center text-lg-start"
           >
-            <span class="section-title-underline">cennik</span>
+            cennik
           </h3>
           <div class="prices-cards section-padding text-center py-5">
             <div class="row row-cols-1 row-cols-md-3 g-4 g-xl-5">

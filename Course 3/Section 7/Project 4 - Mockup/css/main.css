@@ -9,15 +9,13 @@
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
+  scroll-padding-top: 56px;
 }
 
 body {
+  position: relative;
   font-family: 'Open Sans', sans-serif;
   font-size: 1.6rem;
-}
-
-.section {
-  scroll-margin-top: 57px;
 }
 
 .section-padding {
@@ -216,8 +214,8 @@ body {
 }
 
 @media (min-width: 992px) {
-  .section {
-    scroll-margin-top: 57px;
+  html {
+    scroll-padding-top: 60px;
   }
 
   .section-title {
