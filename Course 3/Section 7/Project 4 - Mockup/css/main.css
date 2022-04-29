@@ -149,16 +149,16 @@ body {
 
 /* --- */
 
-.contact-left {
+.contact-info {
   margin-bottom: 0.25em;
 }
 
-.contact-left,
-.contact-right {
+.contact-info,
+.contact-form {
   border: 1px solid #000;
 }
 
-.contact-left-title {
+.contact-info-title {
   font-size: 2.6rem;
   font-weight: bold;
   text-transform: uppercase;
@@ -173,6 +173,12 @@ body {
 
 .contact .btn {
   font-size: 1.6rem;
+}
+
+/* -- */
+
+.footer {
+  padding: 0 1.5rem;
 }
 
 /* --- */
@@ -203,12 +209,12 @@ body {
     justify-content: space-between;
   }
 
-  .contact-left {
+  .contact-info {
     width: 29.5%;
     margin-bottom: 0;
   }
 
-  .contact-right {
+  .contact-form {
     width: 70%;
   }
 }
