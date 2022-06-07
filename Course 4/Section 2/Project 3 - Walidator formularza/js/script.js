@@ -14,11 +14,17 @@ const showError = (input, msg) => {
   errorMsg.textContent = msg;
 };
 
+const clearError = input => {
+  const formBox = input.parentElement;
+  formBox.classList.remove('error');
+};
+
 const checkForm = input => {
   input.forEach(el => {
     if (el.value === '') {
-      showError(el, el.placehoder);
+      showError(el, el.placeholder);
     } else {
+      clearError(el);
     }
   });
 };
