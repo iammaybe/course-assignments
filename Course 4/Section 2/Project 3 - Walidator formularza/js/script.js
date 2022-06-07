@@ -5,6 +5,22 @@ const email = document.querySelector('#email');
 const sendBtn = document.querySelector('.send');
 const clearBtn = document.querySelector('.clear');
 const popup = document.querySelector('.popup');
+const inputArr = [username, pass, pass2, email];
+
+const checkForm = input => {
+  input.forEach(el => {
+    if (el.value === '') {
+      console.log('error');
+    } else {
+      console.log('ok');
+    }
+  });
+};
+
+sendBtn.addEventListener('click', e => {
+  e.preventDefault();
+  checkForm(inputArr);
+});
 
 // SOLUTION 1 (form.reset):
 // clearBtn.addEventListener('click', e => {
@@ -15,5 +31,5 @@ const popup = document.querySelector('.popup');
 // SOLUTION 2 (array + forEach):
 clearBtn.addEventListener('click', e => {
   e.preventDefault();
-  [username, pass, pass2, email].forEach(el => (el.value = ''));
+  inputArr.forEach(el => (el.value = ''));
 });
