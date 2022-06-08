@@ -11,7 +11,7 @@ const showError = (input, msg) => {
   const formBox = input.parentElement;
   const errorMsg = formBox.querySelector('.error-text');
   formBox.classList.add('error');
-  errorMsg.textContent = msg;
+  errorMsg.textContent = msg + '.';
 };
 
 const clearError = input => {
@@ -36,8 +36,14 @@ const checkLength = (input, min) => {
       `${input.previousElementSibling.innerText.slice(
         0,
         -1
-      )} musi składać się z min. ${min} znaków.`
+      )} musi składać się z min. ${min} znaków`
     );
+  }
+};
+
+const checkPassword = (pass, pass2) => {
+  if (pass.value !== pass2.value) {
+    showError(pass2, 'Hasła do siebie nie pasują');
   }
 };
 
@@ -46,6 +52,7 @@ sendBtn.addEventListener('click', e => {
   checkForm(inputArr);
   checkLength(username, 3);
   checkLength(pass, 8);
+  checkPassword(pass, pass2);
 });
 
 // SOLUTION 1 (form.reset):
