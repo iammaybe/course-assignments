@@ -14,7 +14,9 @@ const checkForm = () => {
     error.textContent = '';
     // countBill();
     // countBill2();
-    countBill3();
+    // countBill3();
+    // countBill4();
+    countBill5();
   }
 };
 
@@ -39,10 +41,30 @@ const checkForm = () => {
 // };
 
 // SOLUTION 3 (Number):
-const countBill3 = () => {
-  const newPrice = Number(price.value);
-  const newPeople = Number(people.value);
-  const newTip = Number(tip.value);
+// const countBill3 = () => {
+//   const newPrice = Number(price.value);
+//   const newPeople = Number(people.value);
+//   const newTip = Number(tip.value);
+//   const sum = (newPrice + newPrice * newTip) / newPeople;
+//   costInfo.style.display = 'block';
+//   cost.textContent = sum.toFixed(2);
+// };
+
+// SOLUTION 4 (+):
+// const countBill4 = () => {
+//   const newPrice = +price.value;
+//   const newPeople = +people.value;
+//   const newTip = +tip.value;
+//   const sum = (newPrice + newPrice * newTip) / newPeople;
+//   costInfo.style.display = 'block';
+//   cost.textContent = sum.toFixed(2);
+// };
+
+// SOLUTION 5 (valueAsNumber & +):
+const countBill5 = () => {
+  const newPrice = price.valueAsNumber;
+  const newPeople = people.valueAsNumber;
+  const newTip = +tip.value;
   const sum = (newPrice + newPrice * newTip) / newPeople;
   costInfo.style.display = 'block';
   cost.textContent = sum.toFixed(2);
