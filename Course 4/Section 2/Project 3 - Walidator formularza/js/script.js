@@ -5,7 +5,7 @@ const email = document.querySelector('#email');
 const sendBtn = document.querySelector('.send');
 const clearBtn = document.querySelector('.clear');
 const popup = document.querySelector('.popup');
-const inputArr = [username, pass, pass2, email];
+const inputsArr = [username, pass, pass2, email];
 
 const showError = (input, msg) => {
   const formBox = input.parentElement;
@@ -19,12 +19,12 @@ const clearError = input => {
   formBox.classList.remove('error');
 };
 
-const checkForm = input => {
-  input.forEach(el => {
-    if (el.value === '') {
-      showError(el, el.placeholder);
+const checkForm = inputsArr => {
+  inputsArr.forEach(input => {
+    if (input.value === '') {
+      showError(input, input.placeholder);
     } else {
-      clearError(el);
+      clearError(input);
     }
   });
 };
@@ -58,13 +58,36 @@ const checkMail = email => {
   }
 };
 
+const checkErrors = () => {
+  // SOLUTION 1:
+  // const formBoxesArr = [...document.querySelectorAll('.form-box')];
+  // let errorCount = 0;
+
+  // formBoxesArr.forEach(el => {
+  //   if (el.classList.contains('error')) {
+  //     errorCount++;
+  //   }
+  // });
+
+  // if (errorCount === 0) {
+  //   popup.classList.add('show-popup');
+  // }
+
+  // SOLUTION 2:
+  const errorsArr = [...document.querySelectorAll('.error')];
+  if (!errorsArr.length) {
+    popup.classList.add('show-popup');
+  }
+};
+
 sendBtn.addEventListener('click', e => {
   e.preventDefault();
-  checkForm(inputArr);
+  checkForm(inputsArr);
   checkLength(username, 3);
   checkLength(pass, 8);
   checkPassword(pass, pass2);
   checkMail(email);
+  checkErrors();
 });
 
 // SOLUTION 1 (form.reset):
@@ -76,5 +99,8 @@ sendBtn.addEventListener('click', e => {
 // SOLUTION 2 (array + forEach):
 clearBtn.addEventListener('click', e => {
   e.preventDefault();
-  inputArr.forEach(el => (el.value = ''));
+  inputsArr.forEach(input => {
+    input.value = '';
+    clearError(input);
+  });
 });
