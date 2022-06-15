@@ -9,6 +9,11 @@ const answersArr = [
   'Nie chcesz znać odpowiedzi na to pytanie... :/',
 ];
 
+const shakeBall = () => {
+  ball.classList.add('shake-animation');
+  setTimeout(checkInput, 1000);
+};
+
 const checkInput = () => {
   if (input.value !== '' && input.value.slice(-1) === '?') {
     generateAnswer();
@@ -20,6 +25,7 @@ const checkInput = () => {
     error.textContent = 'Musisz zadać jakieś pytanie!';
     answer.textContent = '';
   }
+  ball.classList.remove('shake-animation');
 };
 
 const generateAnswer = () => {
@@ -27,4 +33,4 @@ const generateAnswer = () => {
   answer.innerHTML = `<span>Odpowiedź</span>: ${answersArr[number]}`;
 };
 
-ball.addEventListener('click', checkInput);
+ball.addEventListener('click', shakeBall);
