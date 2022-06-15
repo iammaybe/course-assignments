@@ -34,12 +34,12 @@ body {
   font-size: 60px;
 }
 
-.ball-img {
+.ball-wrapper {
   position: relative;
   height: 250px;
 }
 
-.ball-img img {
+.ball-img {
   position: absolute;
   top: 30px;
   left: 300px;
@@ -61,7 +61,7 @@ body {
   text-transform: uppercase;
 }
 
-.question-area input {
+.question-area .text {
   padding: 10px 20px;
   width: 80%;
   font-size: 20px;
