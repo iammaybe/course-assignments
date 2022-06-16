@@ -11,7 +11,11 @@ const answersArr = [
 
 const shakeBall = () => {
   ball.classList.add('shake-animation');
-  setTimeout(checkInput, 1000);
+  // SOLUTION 1 (setTimeout):
+  // setTimeout(checkInput, 1000);
+
+  // SOLUTION 2 (animationend):
+  ball.addEventListener('animationend', checkInput);
 };
 
 const checkInput = () => {
