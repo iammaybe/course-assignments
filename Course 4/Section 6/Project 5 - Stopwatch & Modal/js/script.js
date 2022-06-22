@@ -2,7 +2,7 @@ const startBtn = document.querySelector('.start');
 const pauseBtn = document.querySelector('.pause');
 const stopBtn = document.querySelector('.stop');
 const resetBtn = document.querySelector('.reset');
-const historyBtn = document.querySelector('.history');
+const archiveBtn = document.querySelector('.archive');
 const stopwatch = document.querySelector('.stopwatch');
 const time = document.querySelector('.time');
 const timeList = document.querySelector('.time-list');
@@ -15,6 +15,7 @@ let countTime;
 let minutes = 0;
 let seconds = 0;
 let flag = true;
+const times = [];
 
 const handleStart = () => {
   if (flag) {
@@ -35,6 +36,21 @@ const handleStart = () => {
   flag = false;
 };
 
+const handleStop = () => {
+  if (stopwatch.textContent !== '0:00') {
+    time.innerHTML = `Ostatni czas: ${stopwatch.textContent}`;
+    time.style.visibility = 'visible';
+    times.push(stopwatch.textContent);
+  }
+
+  clearInterval(countTime);
+  stopwatch.textContent = '0:00';
+  timeList.textContent = '';
+  minutes = 0;
+  seconds = 0;
+  flag = true;
+};
+
 const handlePause = () => {
   clearInterval(countTime);
   flag = true;
@@ -42,3 +58,4 @@ const handlePause = () => {
 
 startBtn.addEventListener('click', handleStart);
 pauseBtn.addEventListener('click', handlePause);
+stopBtn.addEventListener('click', handleStop);
