@@ -5,7 +5,7 @@ const email = document.querySelector('#email');
 const sendBtn = document.querySelector('.send');
 const clearBtn = document.querySelector('.clear');
 const popup = document.querySelector('.popup');
-const inputsArr = [username, pass, pass2, email];
+const inputs = [username, pass, pass2, email];
 
 const showError = (input, msg) => {
   const formBox = input.parentElement;
@@ -19,8 +19,8 @@ const clearError = input => {
   formBox.classList.remove('error');
 };
 
-const checkForm = inputsArr => {
-  inputsArr.forEach(input => {
+const checkInputs = inputs => {
+  inputs.forEach(input => {
     if (input.value === '') {
       showError(input, input.placeholder);
     } else {
@@ -60,11 +60,11 @@ const checkMail = email => {
 
 const checkErrors = () => {
   // SOLUTION 1:
-  // const formBoxesArr = [...document.querySelectorAll('.form-box')];
+  // const formBoxes = [...document.querySelectorAll('.form-box')];
   // let errorCount = 0;
 
-  // formBoxesArr.forEach(el => {
-  //   if (el.classList.contains('error')) {
+  // formBoxes.forEach(formBox => {
+  //   if (formBox.classList.contains('error')) {
   //     errorCount++;
   //   }
   // });
@@ -74,15 +74,15 @@ const checkErrors = () => {
   // }
 
   // SOLUTION 2:
-  const errorsArr = [...document.querySelectorAll('.error')];
-  if (!errorsArr.length) {
+  const errors = [...document.querySelectorAll('.error')];
+  if (!errors.length) {
     popup.classList.add('show-popup');
   }
 };
 
 sendBtn.addEventListener('click', e => {
   e.preventDefault();
-  checkForm(inputsArr);
+  checkInputs(inputs);
   checkLength(username, 3);
   checkLength(pass, 8);
   checkPassword(pass, pass2);
@@ -99,7 +99,7 @@ sendBtn.addEventListener('click', e => {
 // SOLUTION 2 (array + forEach):
 clearBtn.addEventListener('click', e => {
   e.preventDefault();
-  inputsArr.forEach(input => {
+  inputs.forEach(input => {
     input.value = '';
     clearError(input);
   });

@@ -2,7 +2,7 @@ const ball = document.querySelector('.ball-img');
 const input = document.querySelector('.text');
 const answer = document.querySelector('.answer');
 const error = document.querySelector('.error');
-const answersArr = [
+const answers = [
   'Tak!',
   'Nie.',
   'Ciężko powiedzieć...',
@@ -33,8 +33,8 @@ const checkInput = () => {
 };
 
 const generateAnswer = () => {
-  const number = Math.floor(Math.random() * answersArr.length);
-  answer.innerHTML = `<span>Odpowiedź</span>: ${answersArr[number]}`;
+  const number = Math.floor(Math.random() * answers.length);
+  answer.innerHTML = `<span>Odpowiedź</span>: ${answers[number]}`;
 };
 
 ball.addEventListener('click', shakeBall);
