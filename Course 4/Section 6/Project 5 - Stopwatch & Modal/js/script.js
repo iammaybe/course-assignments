@@ -14,27 +14,30 @@ const closeModalBtn = document.querySelector('.close');
 let countTime;
 let minutes = 0;
 let seconds = 0;
+let flag = true;
 
 const handleStart = () => {
-  clearInterval(countTime);
-
-  countTime = setInterval(() => {
-    if (seconds < 9) {
-      seconds++;
-      stopwatch.textContent = `${minutes}:0${seconds}`;
-    } else if (seconds >= 9 && seconds < 59) {
-      seconds++;
-      stopwatch.textContent = `${minutes}:${seconds}`;
-    } else if (seconds >= 59) {
-      minutes++;
-      seconds = 0;
-      stopwatch.textContent = `${minutes}:00`;
-    }
-  }, 1000);
+  if (flag) {
+    countTime = setInterval(() => {
+      if (seconds < 9) {
+        seconds++;
+        stopwatch.textContent = `${minutes}:0${seconds}`;
+      } else if (seconds >= 9 && seconds < 59) {
+        seconds++;
+        stopwatch.textContent = `${minutes}:${seconds}`;
+      } else if (seconds >= 59) {
+        minutes++;
+        seconds = 0;
+        stopwatch.textContent = `${minutes}:00`;
+      }
+    }, 1000);
+  }
+  flag = false;
 };
 
 const handlePause = () => {
   clearInterval(countTime);
+  flag = true;
 };
 
 startBtn.addEventListener('click', handleStart);
