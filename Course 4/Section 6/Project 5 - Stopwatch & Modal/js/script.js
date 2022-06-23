@@ -18,22 +18,21 @@ let flag = true;
 const times = [];
 
 const handleStart = () => {
-  if (flag) {
-    countTime = setInterval(() => {
-      if (seconds < 9) {
-        seconds++;
-        stopwatch.textContent = `${minutes}:0${seconds}`;
-      } else if (seconds >= 9 && seconds < 59) {
-        seconds++;
-        stopwatch.textContent = `${minutes}:${seconds}`;
-      } else if (seconds >= 59) {
-        minutes++;
-        seconds = 0;
-        stopwatch.textContent = `${minutes}:00`;
-      }
-    }, 1000);
-  }
-  flag = false;
+  if (!flag) return;
+  countTime = setInterval(() => {
+    if (seconds < 9) {
+      seconds++;
+      stopwatch.textContent = `${minutes}:0${seconds}`;
+    } else if (seconds >= 9 && seconds < 59) {
+      seconds++;
+      stopwatch.textContent = `${minutes}:${seconds}`;
+    } else if (seconds >= 59) {
+      minutes++;
+      seconds = 0;
+      stopwatch.textContent = `${minutes}:00`;
+    }
+  }, 1000);
+  flag = !flag;
 };
 
 const handleStop = () => {
@@ -48,12 +47,12 @@ const handleStop = () => {
   timeList.textContent = '';
   minutes = 0;
   seconds = 0;
-  flag = true;
+  if (!flag) flag = !flag;
 };
 
 const handlePause = () => {
   clearInterval(countTime);
-  flag = true;
+  if (!flag) flag = !flag;
 };
 
 startBtn.addEventListener('click', handleStart);
