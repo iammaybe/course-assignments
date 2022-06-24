@@ -15,7 +15,7 @@ let countTime;
 let minutes = 0;
 let seconds = 0;
 let flag = true;
-const times = [];
+let times = [];
 
 const handleStart = () => {
   if (!flag) return;
@@ -42,6 +42,21 @@ const handleStop = () => {
     times.push(stopwatch.textContent);
   }
 
+  clearStuff();
+};
+
+const handlePause = () => {
+  clearInterval(countTime);
+  if (!flag) flag = !flag;
+};
+
+const handleReset = () => {
+  time.style.visibility = 'hidden';
+  times = [];
+  clearStuff();
+};
+
+const clearStuff = () => {
   clearInterval(countTime);
   stopwatch.textContent = '0:00';
   timeList.textContent = '';
@@ -50,11 +65,7 @@ const handleStop = () => {
   if (!flag) flag = !flag;
 };
 
-const handlePause = () => {
-  clearInterval(countTime);
-  if (!flag) flag = !flag;
-};
-
 startBtn.addEventListener('click', handleStart);
 pauseBtn.addEventListener('click', handlePause);
 stopBtn.addEventListener('click', handleStop);
+resetBtn.addEventListener('click', handleReset);
