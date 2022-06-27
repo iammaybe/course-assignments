@@ -41,7 +41,6 @@ const handleStop = () => {
     time.style.visibility = 'visible';
     times.push(stopwatch.textContent);
   }
-
   clearStuff();
 };
 
@@ -65,7 +64,27 @@ const clearStuff = () => {
   if (!flag) flag = !flag;
 };
 
+const showArchive = () => {
+  timeList.textContent = '';
+
+  // SOLUTION 1 (new variable 'num'):
+  // let num = 1;
+  // times.forEach(time => {
+  //   const newTime = document.createElement('li');
+  //   newTime.innerHTML = `Pomiar nr ${num++}: <span>${time}</span>`;
+  //   timeList.append(newTime);
+  // });
+
+  // SOLUTION 2 ('index' parameter):
+  times.forEach((time, index) => {
+    const newTime = document.createElement('li');
+    newTime.innerHTML = `Pomiar nr ${++index}: <span>${time}</span>`;
+    timeList.append(newTime);
+  });
+};
+
 startBtn.addEventListener('click', handleStart);
 pauseBtn.addEventListener('click', handlePause);
 stopBtn.addEventListener('click', handleStop);
 resetBtn.addEventListener('click', handleReset);
+archiveBtn.addEventListener('click', showArchive);
