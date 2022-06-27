@@ -164,11 +164,12 @@ button:focus {
   margin: 40px auto 0;
   width: 200px;
   background-color: var(--first-color);
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .modal .close:hover {
-  background-color: rgb(226, 36, 26);
+  background-color: #fff;
+  color: #000;
 }
 
 .modal-animation {
