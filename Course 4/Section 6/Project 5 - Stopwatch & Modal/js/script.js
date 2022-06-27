@@ -83,8 +83,21 @@ const showArchive = () => {
   });
 };
 
+const checkModal = () => {
+  !(modalShadow.style.display === 'block')
+    ? (modalShadow.style.display = 'block')
+    : (modalShadow.style.display = 'none');
+  modalShadow.classList.toggle('modal-animation');
+};
+
 startBtn.addEventListener('click', handleStart);
 pauseBtn.addEventListener('click', handlePause);
 stopBtn.addEventListener('click', handleStop);
 resetBtn.addEventListener('click', handleReset);
 archiveBtn.addEventListener('click', showArchive);
+
+infoBtn.addEventListener('click', checkModal);
+closeModalBtn.addEventListener('click', checkModal);
+addEventListener('click', e =>
+  e.target === modalShadow ? checkModal() : false
+);
