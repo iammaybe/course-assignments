@@ -113,14 +113,30 @@ colorBtn.addEventListener('click', () => {
   colorPanel.classList.toggle('show-colors');
 });
 
-colorOne.addEventListener('click', () => {
-  root.style.setProperty('--first-color', 'rgb(250, 20, 6)');
-});
+// SOLUTION 1 (listener on each color):
+// colorOne.addEventListener('click', () => {
+//   root.style.setProperty('--first-color', 'rgb(250, 20, 6)');
+// });
 
-colorTwo.addEventListener('click', () => {
-  root.style.setProperty('--first-color', 'rgb(6, 173, 250)');
-});
+// colorTwo.addEventListener('click', () => {
+//   root.style.setProperty('--first-color', 'rgb(6, 173, 250)');
+// });
 
-colorThree.addEventListener('click', () => {
-  root.style.setProperty('--first-color', 'rgb(0, 255, 42)');
-});
+// colorThree.addEventListener('click', () => {
+//   root.style.setProperty('--first-color', 'rgb(0, 255, 42)');
+// });
+
+// SOLUTION 2 (arrays, forEach and datasets):
+const colors = ['rgb(250,20,6)', 'rgb(6,173,250)', 'rgb(0,255,42)'];
+const colorDivs = [...document.querySelectorAll('[data-color-number]')];
+
+const changeColor = () => {
+  colorDivs.forEach(colorDiv => {
+    colorDiv.addEventListener('click', e => {
+      const index = e.target.dataset.colorNumber;
+      root.style.setProperty('--first-color', colors[index]);
+    });
+  });
+};
+
+changeColor();
