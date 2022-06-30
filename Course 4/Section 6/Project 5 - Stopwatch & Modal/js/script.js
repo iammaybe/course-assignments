@@ -13,9 +13,12 @@ const closeModalBtn = document.querySelector('.close');
 
 const colorBtn = document.querySelector('.fa-paint-brush');
 const colorPanel = document.querySelector('.colors');
-const colorOne = document.querySelector('.one');
-const colorTwo = document.querySelector('.two');
-const colorThree = document.querySelector('.three');
+// const colorOne = document.querySelector('.one');
+// const colorTwo = document.querySelector('.two');
+// const colorThree = document.querySelector('.three');
+const colors = ['rgb(250,20,6)', 'rgb(6,173,250)', 'rgb(0,255,42)'];
+const colorDivs = [...document.querySelectorAll('[data-color-number]')];
+const colorItems = [colorBtn, colorPanel, ...colorDivs];
 
 let countTime;
 let minutes = 0;
@@ -97,23 +100,18 @@ const checkModal = () => {
   modalShadow.classList.toggle('modal-animation');
 };
 
-startBtn.addEventListener('click', handleStart);
-pauseBtn.addEventListener('click', handlePause);
-stopBtn.addEventListener('click', handleStop);
-resetBtn.addEventListener('click', handleReset);
-archiveBtn.addEventListener('click', showArchive);
+// COLOR CHANGE FEATURE - SOLUTION 1 (changeColor function - 'colors' and 'colorDivs' arrays):
+const changeColor = () => {
+  colorDivs.forEach(colorDiv => {
+    colorDiv.addEventListener('click', e => {
+      const index = e.target.dataset.colorNumber;
+      root.style.setProperty('--first-color', colors[index]);
+    });
+  });
+};
+changeColor();
 
-infoBtn.addEventListener('click', checkModal);
-closeModalBtn.addEventListener('click', checkModal);
-addEventListener('click', e =>
-  e.target === modalShadow ? checkModal() : false
-);
-
-colorBtn.addEventListener('click', () => {
-  colorPanel.classList.toggle('show-colors');
-});
-
-// SOLUTION 1 (listener on each color):
+// COLOR CHANGE FEATURE - SOLUTION 2 (listener on each color):
 // colorOne.addEventListener('click', () => {
 //   root.style.setProperty('--first-color', 'rgb(250, 20, 6)');
 // });
@@ -126,17 +124,50 @@ colorBtn.addEventListener('click', () => {
 //   root.style.setProperty('--first-color', 'rgb(0, 255, 42)');
 // });
 
-// SOLUTION 2 (arrays, forEach and datasets):
-const colors = ['rgb(250,20,6)', 'rgb(6,173,250)', 'rgb(0,255,42)'];
-const colorDivs = [...document.querySelectorAll('[data-color-number]')];
+startBtn.addEventListener('click', handleStart);
+pauseBtn.addEventListener('click', handlePause);
+stopBtn.addEventListener('click', handleStop);
+resetBtn.addEventListener('click', handleReset);
+archiveBtn.addEventListener('click', showArchive);
 
-const changeColor = () => {
-  colorDivs.forEach(colorDiv => {
-    colorDiv.addEventListener('click', e => {
-      const index = e.target.dataset.colorNumber;
-      root.style.setProperty('--first-color', colors[index]);
-    });
-  });
-};
+infoBtn.addEventListener('click', checkModal);
+closeModalBtn.addEventListener('click', checkModal);
 
-changeColor();
+colorBtn.addEventListener('click', () => {
+  colorPanel.classList.toggle('show-colors');
+});
+
+addEventListener('click', e => {
+  // MODAL - NOTATION 1
+  // e.target === modalShadow ? checkModal() : false;
+  // MODAL - NOTATION 2
+  // e.target === modalShadow && checkModal();
+  // MODAL - NOTATION 3
+  if (e.target === modalShadow) checkModal();
+
+  // COLORS - NOTATION 1
+  // e.target !== colorBtn &&
+  // e.target !== colorPanel &&
+  // !colorDivs.includes(e.target)
+  //   ? colorPanel.classList.remove('show-colors')
+  //   : false;
+
+  // COLORS - NOTATION 2
+  // e.target !== colorBtn &&
+  //   e.target !== colorPanel &&
+  //   !colorDivs.includes(e.target) &&
+  //   colorPanel.classList.remove('show-colors');
+
+  // !colorItems.includes(e.target) && colorPanel.classList.remove('show-colors'); // shorthand notation ('colorItems' array)
+
+  // COLORS - NOTATION 3
+  // if (
+  //   e.target !== colorBtn &&
+  //   e.target !== colorPanel &&
+  //   !colorDivs.includes(e.target)
+  // )
+  //   colorPanel.classList.remove('show-colors');
+
+  if (!colorItems.includes(e.target))
+    colorPanel.classList.remove('show-colors'); // shorthand notation ('colorItems' array)
+});
