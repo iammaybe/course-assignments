@@ -9,7 +9,7 @@ const notePanel = document.querySelector('.note-panel');
 const category = document.querySelector('#category');
 const textarea = document.querySelector('#text');
 const error = document.querySelector('.error');
-let selectedValue;
+let selectedOption;
 let cardID = 0;
 
 const openPanel = () => {
@@ -38,9 +38,7 @@ const createNote = () => {
   newNote.setAttribute('id', cardID++);
   newNote.innerHTML = `
   <div class="note-header">
-    <h3 class="h3 note-title">${
-      category.options[category.selectedIndex].text
-    }</h3>
+    <h3 class="h3 note-title">${selectedOption.text}</h3>
   <button class="delete-note">
     <i class="fas fa-times icon"></i>
   </button>
@@ -55,6 +53,10 @@ const createNote = () => {
   newNote.append(newNoteBody);
   noteArea.append(newNote);
   closePanel();
+};
+
+const selectOption = () => {
+  selectedOption = category.options[category.selectedIndex];
 };
 
 addBtn.addEventListener('click', openPanel);
