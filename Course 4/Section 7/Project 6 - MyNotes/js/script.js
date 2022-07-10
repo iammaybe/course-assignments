@@ -24,7 +24,7 @@ const closePanel = () => {
 };
 
 const addNote = () => {
-  if (category.selectedIndex !== 0 && textarea.value !== '') {
+  if (selectedOption !== 0 && textarea.value !== '') {
     createNote();
     error.style.visibility = 'hidden';
   } else {
@@ -53,10 +53,21 @@ const createNote = () => {
   newNote.append(newNoteBody);
   noteArea.append(newNote);
   closePanel();
+  checkColor(newNote);
 };
 
 const selectOption = () => {
   selectedOption = category.options[category.selectedIndex];
+};
+
+const checkColor = note => {
+  if (selectedOption.value === 'shopping') {
+    note.style.backgroundColor = 'rgb(72,255,0)';
+  } else if (selectedOption.value === 'work') {
+    note.style.backgroundColor = 'rgb(255,243,0)';
+  } else if (selectedOption.value === 'other') {
+    note.style.backgroundColor = 'rgb(0,170,255)';
+  }
 };
 
 addBtn.addEventListener('click', openPanel);
