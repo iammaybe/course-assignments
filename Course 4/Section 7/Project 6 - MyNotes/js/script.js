@@ -35,11 +35,11 @@ const addNote = () => {
 const createNote = () => {
   const newNote = document.createElement('div');
   newNote.classList.add('note');
-  newNote.setAttribute('id', cardID++);
+  newNote.setAttribute('id', cardID);
   newNote.innerHTML = `
   <div class="note-header">
     <h3 class="h3 note-title">${selectedOption.text}</h3>
-  <button class="delete-note">
+  <button class="delete-note" onclick="deleteNote(${cardID})">
     <i class="fas fa-times icon"></i>
   </button>
   </div>`;
@@ -52,6 +52,7 @@ const createNote = () => {
   newNoteBody.append(newNoteBodyText);
   newNote.append(newNoteBody);
   noteArea.append(newNote);
+  cardID++;
   closePanel();
   checkColor(newNote);
 };
@@ -68,6 +69,11 @@ const checkColor = note => {
   } else if (selectedOption.value === 'other') {
     note.style.backgroundColor = 'rgb(0,170,255)';
   }
+};
+
+const deleteNote = id => {
+  const noteToDelete = document.getElementById(id);
+  noteArea.removeChild(noteToDelete);
 };
 
 addBtn.addEventListener('click', openPanel);
