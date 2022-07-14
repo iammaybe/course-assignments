@@ -6,12 +6,15 @@ const swapBtn = document.querySelector('.swap');
 const rateInfo = document.querySelector('.rate-info');
 
 const calculate = () => {
-  const URL = `https://api.exchangerate.host/latest?base=${currencyOne.value}&symbols=${currencyTwo.value})`;
+  // const URL = `https://api.exchangerate.host/latest?base=${currencyOne.value}&symbols=${currencyTwo.value})`; // NOTATION 1:
+  const URL = `https://api.exchangerate.host/convert?from=${currencyOne.value}&to=${currencyTwo.value}`; // NOTATION 2:
 
   fetch(URL)
     .then(res => res.json())
     .then(data => {
-      const rate = data.rates[currencyTwo.value];
+      // const rate = data.rates[currencyTwo.value]; // NOTATION 1
+      const rate = data.result; // NOTATION 2
+
       amountTwo.value = (amountOne.value * rate).toFixed(2);
       rateInfo.textContent = `1 ${currencyOne.value} = ${rate.toFixed(4)} ${
         currencyTwo.value
