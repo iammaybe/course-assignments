@@ -16,7 +16,7 @@ const lightBtn = document.querySelector('.light');
 const darkBtn = document.querySelector('.dark');
 
 let root = document.documentElement;
-let ID = 0;
+let transactionID = 0;
 let categoryIcon;
 let selectedCategory;
 let money = [0];
@@ -36,7 +36,7 @@ const checkForm = () => {
     amountInput.value !== '' &&
     categorySelect.value !== 'none'
   ) {
-    console.log('ok');
+    createNewTransaction();
   } else {
     alert('Wypełnij wszystkie pola!');
   }
@@ -46,6 +46,26 @@ const clearForm = () => {
   nameInput.value = '';
   amountInput.value = '';
   categorySelect.selectedIndex = 0;
+};
+
+const createNewTransaction = () => {
+  const newTransaction = document.createElement('div');
+  newTransaction.classList.add('transaction');
+  newTransaction.setAttribute('id', transactionID);
+
+  newTransaction.innerHTML = `
+  <p class="transaction-name">${categoryIcon} ${nameInput.value}</p>
+  <p class="transaction-amount">${amountInput.value} zł
+    <button class="delete" onclick="deleteTransaction(${transactionID})"><i class="fas fa-times"></i></button>
+  </p>`;
+
+  amountInput.value > 0
+    ? incomeSection.append(newTransaction)
+    : expensesSection.append(newTransaction);
+
+  money.push(amountInput.valueAsNumber);
+  transactionID++;
+  closePanel();
 };
 
 addTransactionBtn.addEventListener('click', showPanel);
