@@ -52,6 +52,7 @@ const createNewTransaction = () => {
   const newTransaction = document.createElement('div');
   newTransaction.classList.add('transaction');
   newTransaction.setAttribute('id', transactionID);
+  checkCategory();
 
   newTransaction.innerHTML = `
   <p class="transaction-name">${categoryIcon} ${nameInput.value}</p>
@@ -66,6 +67,23 @@ const createNewTransaction = () => {
   money.push(amountInput.valueAsNumber);
   transactionID++;
   closePanel();
+};
+
+const checkCategory = () => {
+  switch (categorySelect.value) {
+    case 'income':
+      categoryIcon = '<i class="fas fa-money-bill-wave"></i>';
+      break;
+    case 'shopping':
+      categoryIcon = '<i class="fas fa-cart-arrow-down"></i>';
+      break;
+    case 'food':
+      categoryIcon = '<i class="fas fa-hamburger"></i>';
+      break;
+    case 'cinema':
+      categoryIcon = '<i class="fas fa-film"></i>';
+      break;
+  }
 };
 
 addTransactionBtn.addEventListener('click', showPanel);
