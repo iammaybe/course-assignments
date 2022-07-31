@@ -62,12 +62,16 @@ const selectOption = () => {
 };
 
 const checkColor = note => {
-  if (selectedOption.value === 'shopping') {
-    note.style.backgroundColor = 'rgb(72,255,0)';
-  } else if (selectedOption.value === 'work') {
-    note.style.backgroundColor = 'rgb(255,243,0)';
-  } else if (selectedOption.value === 'other') {
-    note.style.backgroundColor = 'rgb(0,170,255)';
+  switch (selectedOption.value) {
+    case 'shopping':
+      note.style.backgroundColor = 'rgb(72,255,0)';
+      break;
+    case 'work':
+      note.style.backgroundColor = 'rgb(255,243,0)';
+      break;
+    case 'other':
+      note.style.backgroundColor = 'rgb(0,170,255)';
+      break;
   }
 };
 
