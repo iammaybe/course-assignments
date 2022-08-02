@@ -118,9 +118,15 @@ const changeStyleToLight = () => {
   root.style.setProperty('--second-color', '#14161F');
   root.style.setProperty('--border-color', 'rgba(0,0,0,0.2)');
 };
+const changeStyleToDark = () => {
+  root.style.setProperty('--first-color', '#14161F');
+  root.style.setProperty('--second-color', '#F9F9F9');
+  root.style.setProperty('--border-color', 'rgba(255,255,255,0.4)');
+};
 
 addTransactionBtn.addEventListener('click', showPanel);
 cancelBtn.addEventListener('click', closePanel);
 saveBtn.addEventListener('click', checkForm);
 deleteAllBtn.addEventListener('click', deleteAllTransactions);
 lightStyleBtn.addEventListener('click', changeStyleToLight);
+darkStyleBtn.addEventListener('click', changeStyleToDark);
