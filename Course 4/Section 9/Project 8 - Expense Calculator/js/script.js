@@ -65,6 +65,7 @@ const createNewTransaction = () => {
     : expensesSection.append(newTransaction);
 
   money.push(amountInput.valueAsNumber);
+  countMoney(money);
   transactionID++;
   closePanel();
 };
@@ -84,6 +85,21 @@ const checkCategory = () => {
       categoryIcon = '<i class="fas fa-film"></i>';
       break;
   }
+};
+
+const countMoney = money => {
+  const newMoney = money.reduce((a, b) => a + b);
+  availableMoney.textContent = `${newMoney} zł`;
+};
+
+const deleteTransaction = transactionID => {
+  const transactionToDelete = document.getElementById(transactionID);
+  const transactionAmount = parseFloat(
+    transactionToDelete.childNodes[3].innerText
+  );
+  const indexOfTransaction = money.indexOf(transactionAmount);
+  money.splice(indexOfTransaction, 1);
+  countMoney(money);
 };
 
 addTransactionBtn.addEventListener('click', showPanel);
