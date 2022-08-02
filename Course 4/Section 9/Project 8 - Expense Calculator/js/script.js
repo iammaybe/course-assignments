@@ -19,7 +19,7 @@ let root = document.documentElement;
 let transactionID = 0;
 let categoryIcon;
 let selectedCategory;
-let money = [0];
+let money = [];
 
 const showPanel = () => {
   addTransactionPanel.style.display = 'flex';
@@ -88,7 +88,7 @@ const checkCategory = () => {
 };
 
 const countMoney = money => {
-  const newMoney = money.reduce((a, b) => a + b);
+  const newMoney = money.reduce((a, b) => a + b, 0);
   availableMoney.textContent = `${newMoney} zł`;
 };
 
@@ -97,8 +97,12 @@ const deleteTransaction = transactionID => {
   const transactionAmount = parseFloat(
     transactionToDelete.childNodes[3].innerText
   );
+
   const indexOfTransaction = money.indexOf(transactionAmount);
   money.splice(indexOfTransaction, 1);
+
+  const transactionParent = transactionToDelete.parentElement;
+  transactionParent.removeChild(transactionToDelete);
   countMoney(money);
 };
 
