@@ -12,8 +12,8 @@ const saveBtn = document.querySelector('.save');
 const cancelBtn = document.querySelector('.cancel');
 const deleteBtn = document.querySelector('.delete');
 const deleteAllBtn = document.querySelector('.delete-all');
-const lightBtn = document.querySelector('.light');
-const darkBtn = document.querySelector('.dark');
+const lightStyleBtn = document.querySelector('.light');
+const darkStyleBtn = document.querySelector('.dark');
 
 let root = document.documentElement;
 let transactionID = 0;
@@ -113,7 +113,14 @@ const deleteAllTransactions = () => {
   money = [];
 };
 
+const changeStyleToLight = () => {
+  root.style.setProperty('--first-color', '#F9F9F9');
+  root.style.setProperty('--second-color', '#14161F');
+  root.style.setProperty('--border-color', 'rgba(0,0,0,0.2)');
+};
+
 addTransactionBtn.addEventListener('click', showPanel);
 cancelBtn.addEventListener('click', closePanel);
 saveBtn.addEventListener('click', checkForm);
 deleteAllBtn.addEventListener('click', deleteAllTransactions);
+lightStyleBtn.addEventListener('click', changeStyleToLight);
