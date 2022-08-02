@@ -100,9 +100,7 @@ const deleteTransaction = transactionID => {
 
   const indexOfTransaction = money.indexOf(transactionAmount);
   money.splice(indexOfTransaction, 1);
-
-  const transactionParent = transactionToDelete.parentElement;
-  transactionParent.removeChild(transactionToDelete);
+  transactionToDelete.remove();
   countMoney(money);
 };
 
